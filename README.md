@@ -3,6 +3,6 @@
   * Maven
   * Oracle
   * Mybatis
-    *HikariCP
+    * HikariCP
   * Lombok
   
