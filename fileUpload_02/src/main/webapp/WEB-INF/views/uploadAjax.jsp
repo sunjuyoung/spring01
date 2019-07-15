@@ -145,11 +145,17 @@ $(document).ready(function(){
 			var index = i+1;
 			
 			if(!obj.image){
-				str += "<li><img src='/resources/img/attach.png'>"+ obj.fileName + "</li>"; //이미지 파일이 아닐 경우 파일 이미지 보여준다
+				str += "<li><img src='/resources/img/attach.png'>"+ obj.fileName + "</li>"; //이미지 파일이 아닐 경우 단순 파일 이미지 보여준다
 				
 			}else{
 			
-			str += "<li>"+ index +"."+obj.fileName + "</li>";
+		//	str += "<li>"+ index +"."+obj.fileName + "</li>";
+		
+		//파일의 경로 + s_ + uuid 가 붙은 이름
+		var fileCallPath = encodeURIComponent(obj.uploadPath + "/s_"+obj.uuid+"_"+obj.fileName);
+		
+		str+= "<li><img src='/display?fileName="+fileCallPath+"'></li>";
+		
 			}
 			
 		});

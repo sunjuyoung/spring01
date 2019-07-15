@@ -10,11 +10,13 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -54,8 +56,40 @@ public class UploadController {
 	
 	//업로드된 파일의 이름과 원본 파일의 이름
 	//파일이 저장된 경로
-	//업로드된 팡리이 이미지인지 아닌지 대한 정보
+	//업로드된 파일이 이미지인지 아닌지 대한 정보
 	
+	//파일의 경로 + s_ + uuid 가 붙은 이름
+	//display/fileName=2018/11/11/image.jpg
+	@GetMapping("/display")
+	@ResponseBody
+	public ResponseEntity<byte[]> getFile(String fileName){ //문자열로 파일의 경로가 포함된 filename을 파라미터로 받고
+		
+		log.info("fileName = " + fileName);
+		File file = new File("c:\\upload\\"+fileName);
+		
+		log.info("file :  "  + file);
+		
+		//byte[]로 이미지 파일을 저장한다
+		ResponseEntity<byte[]> result =null;
+		
+		try {
+			HttpHeaders header = new HttpHeaders();
+			
+			//byte[]로 데이터를 전송할때 브라우저에 보내주는 MIME타입이 파일의 종류에 따라 달라진다
+			//이 부분을 해결하기 위해 probeContentType()을 이용해서 적절한 MIME타입 데이터를 Http헤더메시지에 포함할수있도록 처리
+			header.add("Content-Type", Files.probeContentType(file.toPath()));
+			log.info("filePath :  " + file.toPath());
+			result = new ResponseEntity<>(FileCopyUtils.copyToByteArray(file), header,HttpStatus.OK);
+			
+			
+		}catch(IOException e) {
+			e.printStackTrace();
+			
+		}
+		
+		
+		return result;
+	}
 	
 	
 	
