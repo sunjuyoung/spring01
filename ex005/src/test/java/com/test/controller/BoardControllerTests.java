@@ -54,7 +54,7 @@ public class BoardControllerTests {
 	public void testSearch() {
 		
 		Criteria cri = new Criteria();
-		cri.setKeyword("쌈빵");
+		cri.setKeyword("test");
 		cri.setType("TC");
 		
 		List<BoardVO> list = mapper.getListWithPaging(cri);

@@ -423,7 +423,8 @@
 													style="color: gray"><c:out value="${board.bno}"></c:out></a></td>
 													<td><a class ="move"
 													href='<c:out value="${board.bno }"/>'
-													 style="color: gray"><c:out value="${board.title }"></c:out></a></td>
+													 style="color: gray"><c:out value="${board.title }"></c:out>
+													 <b>[ <c:out value="${board.replyCnt}"/>]</b></a></td>
 													
 													
 												<td><c:out value="${board.writer }"></c:out></td>

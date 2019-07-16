@@ -31,8 +31,8 @@ public class ReplyMapperTests {
 			
 			ReplyVO vo = new ReplyVO();
 			vo.setBno(121L);
-			vo.setReply("채원히짱쌈토미"+i);
-			vo.setReplyer("채원"+i);
+			vo.setReply("test011111"+i);
+			vo.setReplyer("tester01"+i);
 			
 			mapper.insert(vo);
 			

@@ -43,8 +43,8 @@ select * from tb1_board where rownum <10
 
 <select id="getListWithPaging" resultType="com.test.domain.BoardVO">
 <![CDATA[
-select bno,title,content,writer,regDate,updateDate from 
-(select /*+INDEX_DESC (tb1_board pk_board)*/ rownum rn, bno, title, content,regDate,updateDate,writer from tb1_board where 
+select bno,title,content,writer,regDate,updateDate,replyCnt from 
+(select /*+INDEX_DESC (tb1_board pk_board)*/ rownum rn, bno, title, content,regDate,updateDate,writer,replyCnt from tb1_board where 
 ]]>
 
 <include refid="criteria"></include>
@@ -104,6 +104,9 @@ bno >0
 
 </select>
 
+<update id ="updateReplyCnt">
+update tb1_board set replyCnt = replycnt + #{amount} where bno =#{bno}
 
+</update>
 
 </mapper>

@@ -20,11 +20,12 @@ import com.test.service.ReplyService;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
 
-//스프링4부터 restcontroller라는 어노테이션을 추가해서해당 controller은 모든 메서드
-//리턴 타입을   기존과 다르게처리한다는 것을 명시
-
+//REST방식 댓글 처리
+//스프링4부터 @Restcontroller라는 어노테이션을 추가해서 해당 
+//controller 메서드 들은 리턴 타입을   기존과 다르게처리한다는 것을 명시
+// 컨트롤러 메소드 선언부에 @ResponseBody 이용한것과 동일
 @RequestMapping("/replies")
-@RestController  // = 컨트롤러 메소드 선언부에 @ResponseBody 이용한것과 동일
+@RestController  
 @Log4j
 @AllArgsConstructor
 public class ReplyController {

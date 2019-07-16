@@ -42,8 +42,11 @@ public class BoardController {
 	//위에 AllArgsConstructor 어노테이션 대신 @Autowired 사용해도된다
 	private BoardService service;
 	
+	
+	
+	
 	@GetMapping("/list")
-	public void list(Model model, Criteria cri){// model = request.setAttribute()유사하다 ,페이지번호같은 실제 데이터를 view로 전달해야하는 경우
+	public void list(Model model, Criteria cri){
 		
 		List<BoardVO> list = new ArrayList<>();
 		
@@ -94,14 +97,14 @@ public class BoardController {
 		int result= service.modify(board); //service modify boolean으로 처리하여 if문으로 작성해도 됨
 		
 	
-		rttr.addFlashAttribute("result", result);          //전달한 값은 url뒤에 붙지 않는다. 일회성 2개이상 쓸 경우, 데이터는 소멸 맵으로 전송
+		rttr.addFlashAttribute("result", result);         //전달한 값은 url뒤에 붙지 않는다. 일회성 2개이상 쓸 경우, 데이터는 소멸 맵으로 전송
 		rttr.addAttribute("pageNum", cri.getPageNum());  //전달한 값은 url뒤에  붙으며, 리프레시해도 데이터가 유지된다.
 		rttr.addAttribute("amount", cri.getAmount());
 		rttr.addAttribute("bno", board.getBno());
 		return "redirect:/board/get";
 	}
-	//삭제
 	
+	 //삭제
 	 //param 속성에 해당하는 bno를 읽어와 Long bno에 할당한다 ,파라미터 타입에 맞게 string값을 변환해 준다
 		//옵션 defaultValue 로 값이 없을때 기본값 사용가능
 		//required 필수 속성

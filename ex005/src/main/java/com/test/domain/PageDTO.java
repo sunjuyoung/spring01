@@ -2,11 +2,11 @@ package com.test.domain;
 
 import lombok.Data;
 import lombok.extern.log4j.Log4j;
-
+//페이징 계산
 @Data
 @Log4j
 public class PageDTO {
-//페이징 계산
+
 	
 	private int startPage,endPage,total;
 	

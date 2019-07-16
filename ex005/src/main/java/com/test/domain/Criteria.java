@@ -5,10 +5,10 @@ import lombok.Data;
 @Data
 public class Criteria {
 	
-	
-	private int pageNum,amount; //페이지
-	
-	private String type,keyword; //검색조건
+	//페이지
+	private int pageNum,amount; 
+	//검색조건
+	private String type,keyword; 
 	
 	
 	  public Criteria() { this(1,10); }
