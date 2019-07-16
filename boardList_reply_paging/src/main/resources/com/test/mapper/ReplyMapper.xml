@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.test.mapper.ReplyMapper">
+    
+<select id="getListWithPaging" resultType = "com.test.domain.ReplyVO">
+
+<![CDATA[ 
+select bno,rno,reply,replyer,replyDate,updateDate 
+from (
+select /*+INDEX (tb1_reply idx_reply) */
+ rownum rn,bno,rno,reply,replyer,replyDate,updateDate 
+from tb1_reply
+ where bno=#{bno} 
+ and rno > 0 
+ and rownum <=5 )
+ where rn >  0 
+]]>
+
+</select>
+
+
+    
+  
+  </mapper>
