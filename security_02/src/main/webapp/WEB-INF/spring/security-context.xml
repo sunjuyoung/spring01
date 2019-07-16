@@ -6,9 +6,15 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	<!-- 네임스페이스 수정 -->
 
-	<!-- 빈등록 -->
+	<!-- CustomAccessDeniedHandler 빈등록 -->
 	<bean id="customAccessDeniedHandler"
 		class="com.test.security.CustomAccessDeniedHandler"></bean>
+
+
+	<!-- 로그인한 사용자에 부여된  -->
+	<!-- customLoginSuccessHandler" 빈등록 -->
+	<bean id="customLoginSuccessHandler"
+		class="com.test.security.CustomLoginSuccessHandler"></bean>
 
 	<security:http>
 
@@ -32,10 +38,15 @@
 		<!--에러 페이지 속성 대신 customAccessDeniedHandler 빈으로 등록해서 사용 -->
 		<security:access-denied-handler
 			ref="customAccessDeniedHandler" />
+			
+		<security:form-login login-page="/customLogin" authentication-success-handler-ref="customLoginSuccessHandler"/>
+	
+		<!-- 로그아웃시 페이지 설정과 세션 무효화  -->
+		<security:logout logout-url="/customLogout" invalidate-session="true" /> <!-- 로그아웃 후 이동페이지 기본값은 security:form-login  설정된 login-page="/customLogin" 
+																					 변경할려면 logout-success-url 속성으로 변경가능 		 -->
 
 
-
-		<security:form-login />
+		
 
 		<!-- 로그인 화면 디자인문제로 별도의 uri이용해서 로그인 페이지 제작해서 사용 -->
 		<security:form-login login-page="/customLogin" />

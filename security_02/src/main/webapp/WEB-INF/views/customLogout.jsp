@@ -8,6 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<title></title>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -40,9 +41,19 @@ $(document).ready(function(){
 </head>
 <body>
 
+
+<!-- POST 방식으로 처리되기 때문에 CSRF 토큰값을 같이 지정합니다. -->
 <div class="container">
-<h2> all page</h2>
-<a href="/customLogout">Logout</a>
+<form action="/customLogout" method="post">
+<h1>Logout</h1>
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token }"/>
+<button>로그아웃</button>
+<!-- 로그아웃시 내부적으로 자동으로 로그인 페이지를 호출하게 됩니다
+   이부분은 스프링 시큐리티 기본 설정이므로 필요하다면 logout-success-url 속성 등을 이용해서 변경할 수 있습니다.
+  -->
+
+</form>
+
 </div>
 
 </body>

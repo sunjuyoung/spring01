@@ -43,7 +43,7 @@ $(document).ready(function(){
 
 <div class="container">
 <h2> member page</h2>
-
+<a href="/customLogout">Logout</a>
 </div>
 
 </body>

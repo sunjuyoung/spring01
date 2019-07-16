@@ -44,6 +44,8 @@ $(document).ready(function(){
 <div class="container">
 <h2> admin page</h2>
 
+<a href="/customLogout">Logout</a>
+
 </div>
 
 </body>

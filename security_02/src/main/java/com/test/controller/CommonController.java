@@ -4,6 +4,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import lombok.extern.log4j.Log4j;
 
@@ -17,16 +18,16 @@ public class CommonController {
 	//access denied 경우 403에러 메시지가 발생
 	//jsp에서는 HttpServletRequest안에 SPRING_SECURITY_403_EXCEPTION이라는 이름으로 AccessDeniedException 객체가 전달
 	
-	/*
-	 * @GetMapping("/accessError") public void accessDenied(Authentication
-	 * auth,Model model) {
-	 * 
-	 * log.info("access denied : " + auth);
-	 * 
-	 * model.addAttribute("msg", "Access Denied!");
-	 * 
-	 * }
-	 */
+	
+	  @GetMapping("/accessError") 
+	  public void accessDenied(Authentication auth,Model model) {
+	  
+	  log.info("access denied : " + auth);
+	  
+	  model.addAttribute("msg", "Access Denied!");
+	  
+	  }
+	 
 	
 	
 	//반드시 get방식으로 접근하는 URI지정
@@ -44,5 +45,17 @@ public class CommonController {
 		 }
 	 }
 	
+	 
+	 @GetMapping("/customLogout")
+	 public void logoutGET() {
+		 
+		 log.info("GET custom logout~~");
+	 }
+	 
+	 @PostMapping("/customLogout")
+	 public void logoutPOST() {
+		 
+		 log.info("Post custom logout~~");
+	 }
 	
 }
