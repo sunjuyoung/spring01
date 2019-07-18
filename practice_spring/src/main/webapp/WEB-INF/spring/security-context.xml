@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<bean id = "customAccessDeniedHandler" class="com.test.security.CustomAccessDeniedHandler"></bean>
+
+<security:http>
+	<security:intercept-url pattern="/reply/list" access="hasRole('ROLE_MEMBER')"/>
+<security:form-login login-page="/customLogin"/>
+
+<security:access-denied-handler ref="customAccessDeniedHandler"/>
+
+
+
+</security:http>
+
+
+
+
+<security:authentication-manager>
+	<security:authentication-provider>
+	
+		<security:user-service>
+		
+			<security:user name="admin" password ="{noop}admin" authorities="ROLE_MEMBER"/>
+			<security:user name="memeber" password="{noop}member" authorities="ROLE_MEMBER"/>
+			<security:user name="sun" password="{noop}sun" authorities="ROLE_ALL"/>
+		
+		</security:user-service>
+	
+	
+	</security:authentication-provider>
+
+
+
+
+</security:authentication-manager>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</beans>
+
+
