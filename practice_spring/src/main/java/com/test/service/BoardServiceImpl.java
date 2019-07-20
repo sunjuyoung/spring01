@@ -30,6 +30,13 @@ public class BoardServiceImpl implements BoardService {
 		return mapper.totalCount(cri);
 	}
 
+	@Override
+	public BoardVO get(BoardVO vo) {
+		
+		
+		return mapper.get(vo);
+	}
+
 	
 	
 }

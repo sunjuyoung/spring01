@@ -83,6 +83,11 @@ bno >0
 </select>
 
 
+<select id="get" resultType="com.test.domain.BoardVO">
+
+select bno,content,title from tb1_board where bno = #{bno}
+</select>
+
 
 
 

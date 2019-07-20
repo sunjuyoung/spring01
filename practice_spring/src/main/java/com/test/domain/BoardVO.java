@@ -2,6 +2,8 @@ package com.test.domain;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.Data;
 
 @Data
@@ -14,7 +16,9 @@ public class BoardVO {
 	private String content;
 	
 	
-	private Date regDate,updateDate;
+	private Date regDate;
+	private Date updateDate;
+	
 	private String writer;
 	
 

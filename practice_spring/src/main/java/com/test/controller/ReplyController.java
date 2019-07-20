@@ -27,7 +27,7 @@ public class ReplyController {
 	private ReplyService service;
 	
 	
-	@GetMapping(value = "/list/{bno}",
+	@GetMapping(value = "/get/{bno}",
 			produces= {MediaType.APPLICATION_JSON_VALUE,
 					MediaType.APPLICATION_XML_VALUE})
 	public ResponseEntity<List<ReplyVO>> list(@PathVariable("bno") Long bno){
@@ -43,7 +43,7 @@ public class ReplyController {
 		
 		
 	}
-	
+
 	
 	
 

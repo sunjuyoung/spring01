@@ -21,8 +21,29 @@ public class ReplyServiceImpl implements ReplyService {
 	@Override
 	public List<ReplyVO> getListWithPaging(Long bno) {
 
+	log.info("ReplyList....service..");
 		
 		return mapper.getListWithPaging(bno);
+	}
+
+	@Override
+	public int delete(int rno) {
+		
+		log.info("reply delete service");
+		return mapper.delete(rno);
+	}
+
+	@Override
+	public int modify(ReplyVO vo) {
+		log.info("reply modify service");
+		return mapper.modify(vo);
+	}
+
+	@Override
+	public int insert(ReplyVO vo) {
+		
+		log.info("reply insert service");
+		return mapper.insert(vo);
 	}
 
 }

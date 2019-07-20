@@ -5,15 +5,22 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 
+
 <bean id = "customAccessDeniedHandler" class="com.test.security.CustomAccessDeniedHandler"></bean>
+<bean id = "customLoginSuccessHandler" class="com.test.security.CustomLoginSuccessHandler"></bean>
+
 
 <security:http>
+
 	<security:intercept-url pattern="/reply/list" access="hasRole('ROLE_MEMBER')"/>
-<security:form-login login-page="/customLogin"/>
-
-<security:access-denied-handler ref="customAccessDeniedHandler"/>
-
-
+	
+	<security:access-denied-handler ref="customAccessDeniedHandler"/>
+	
+	
+	<!-- 로그인 -->
+<security:form-login login-page="/customLogin" authentication-success-handler-ref="customLoginSuccessHandler" />
+<!--로그아웃  -->
+<security:logout logout-url="/customLogout" invalidate-session="true"/>
 
 </security:http>
 

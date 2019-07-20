@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.test.domain.BoardVO;
 import com.test.domain.Criteria;
 import com.test.domain.pageDTO;
 import com.test.service.BoardService;
@@ -23,11 +24,7 @@ public class ReController {
 	@GetMapping("/list")
 	public void list(Model model,Criteria cri) {
 		
-		log.info(cri.getAmount());
-		
-		if(cri.getAmount()==0) {
-			cri.setAmount(5);
-		}
+
 		int total = service.totalCount(cri);
 
 
@@ -37,9 +34,12 @@ public class ReController {
 	}
 	
 	
-	@GetMapping("/newList2")
-	public void index() {
-		log.info("index hi");
+	@GetMapping("/get")
+	public void getContent(Criteria cri, BoardVO vo,Model model) {
+
+		
+		
+		model.addAttribute("board",service.get(vo));
 		
 	}
 	
