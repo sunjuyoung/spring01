@@ -15,7 +15,7 @@ import lombok.extern.log4j.Log4j;
 
 @Controller
 @Log4j
-@RequestMapping("/reply/*")
+@RequestMapping("/reply")
 public class ReController {
 
 	@Autowired
@@ -42,6 +42,8 @@ public class ReController {
 		model.addAttribute("board",service.get(vo));
 		
 	}
+	
+	
 	
 	
 }

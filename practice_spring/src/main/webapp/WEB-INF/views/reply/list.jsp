@@ -2,6 +2,8 @@
 <%-- jstl-1.2.jar 파일 필요 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,7 +63,12 @@ input {
 	$(document)
 			.ready(
 					function() {
+						
+						
+						
+						
 
+						//로그아웃 버튼
 						$("a.dropdown-item").on("click", function() {
 
 							$(".modal-title").text("");
@@ -72,9 +79,9 @@ input {
 
 						});
 
-						var replyUL = $(".chat");
+						
 
-						console.log(replyUL);
+				
 
 						var getForm = $("#getForm"); //페이지 쪽수 
 
@@ -95,61 +102,7 @@ input {
 
 						var actionForm = $("#actionForm"); //페이지 쪽수 
 
-						/* 댓글 출력 */
 
-						function replyajax(bnoValue) {
-
-							ajaxList(
-									bnoValue,
-									function(list) {
-
-										var str = "";
-
-										console.log(list.length);
-
-										for (var i = 0, len = list.length || 0; i < len; i++) {
-											str += "<li class='left clearfix' data-rno='"+list[i].rno+"'  data-replyer='"+list[i].replyer+"'>";
-											str += "  <div><div class='header'><strong class='primary-font' style='font-size:80%;'>["
-													+ list[i].rno
-													+ "] "
-													+ list[i].replyer
-													+ "</strong>";
-											str += " <a href='#'><img src='/resources/img/icon_delete_x.png'  width='13' height='14' title='replyD' alt='"+list[i].rno+"'></a> ";
-											str += " <a href='#'><img src='/resources/img/icon_Modify_pen.png'  width='13' height='14' title='replyM'  alt='"+list[i].rno+"'></a> ";
-											str += "    <small class='pull-right text-muted'>"
-													+ list[i].replyDate
-													+ "</small></div>";
-											str += "    <p style='font-size:80%;'>"
-													+ list[i].reply
-													+ "</p></div></li>";
-
-										}
-
-										console.log(str);
-
-										replyUL.html(str);
-
-									});
-
-						}
-
-						// 리스트출력
-						function ajaxList(bno, callback, error) {
-
-							console.log("bno2 2222" + bno);
-
-							$
-									.ajax({
-										type : 'get',
-										url : '/reply/get/' + bno + '.json',
-										contentType : "application/json; charset=utf-8",
-										success : function(result) {
-											if (callback) {
-												callback(result);
-											}
-										}
-									});
-						}
 
 						var actionForm = $("#actionForm"); //페이지 쪽수 
 						var selected = $("select[name='amount']"); //게시물 수 선택
@@ -257,7 +210,7 @@ input {
 						<!-- /.panel -->
 						<div class="panel panel-default">
 							<div class="panel-heading">
-								<i class="fa fa-comments fa-fw"></i> Board List
+								<i class="fa fa-comments fa-fw"></i> Board List <c:out value="${ID }"/>
 								<!-- -------------------게시물 수---------------------  -->
 								<select name="amount">
 									<option value="5">게시물 수</option>
@@ -344,45 +297,6 @@ input {
 				<form id="actionForm" action="/reply/list" method="get">
 					<input type="hidden" name="pageNum" value='<c:out value="${page.cri.pageNum }"/>'> <input type="hidden" name="amount" value=' <c:out value="${page.cri.amount }" />'>
 				</form>
-
-
-
-
-				<!-- -------------------  reply-----------------------  -->
-				<div class='row'>
-
-					<div class="col-lg-12">
-
-						<!-- /.panel -->
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<i class="fa fa-comments fa-fw"></i> Reply
-
-								<button id="addReplyBtn" class="btn btn-primary btn-sm pull-right" data-oper="new">New</button>
-							</div>
-
-
-							<!-- /.panel-heading -->
-							<div class="panel-body">
-								<hr>
-
-								<ul class="chat">
-
-
-
-								</ul>
-								<!-- ./ end ul -->
-							</div>
-							<!-- /.panel .chat-panel -->
-							<div class="panel-footer">
-								<!-- 댓글 페이징 -->
-
-							</div>
-
-						</div>
-					</div>
-					<!-- ./ end row -->
-				</div>
 
 
 

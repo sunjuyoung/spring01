@@ -41,4 +41,6 @@ public class CommonController {
 		log.info("logout");
 	}
 	
+	
+	
 }

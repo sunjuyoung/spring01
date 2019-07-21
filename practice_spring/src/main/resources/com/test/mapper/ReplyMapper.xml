@@ -20,6 +20,12 @@ from tb1_reply
 
 </select>
 
+<insert id="insert" >
+
+insert into tb1_reply (rno,bno,reply,replyer) values (seq_reply.nextval,#{bno},#{reply},#{replyer})
+
+
+</insert>
 
     
   

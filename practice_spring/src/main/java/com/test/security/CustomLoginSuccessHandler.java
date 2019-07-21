@@ -25,14 +25,22 @@ public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler{
 		List<String> roleNames = new ArrayList<>();
 		
 		
+		
 		auth.getAuthorities().forEach(authority -> {
 			roleNames.add(authority.getAuthority());
+			
 		});
+		
+	
 		
 		log.warn("ROLE NAMES : "+ roleNames);
 		
 		if(roleNames.contains("ROLE_ADMIN")) {
+	
+			request.setAttribute("ID",auth.getName());
+		
 			response.sendRedirect("/reply/list");
+			request.setAttribute("ID",auth.getName());
 			return;
 		}
 		

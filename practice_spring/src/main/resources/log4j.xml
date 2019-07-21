@@ -14,7 +14,15 @@
 	<logger name="com.test.controller">
 		<level value="info" />
 	</logger>
-		<logger name="com.test.domain">
+	<logger name="com.test.mapper">
+		<level value="info" />
+	</logger>
+	
+		<logger name="com.test.service">
+		<level value="info" />
+	</logger>
+	
+	<logger name="com.test.domain">
 		<level value="info" />
 	</logger>
 	

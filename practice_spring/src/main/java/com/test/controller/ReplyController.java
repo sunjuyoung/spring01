@@ -2,12 +2,13 @@ package com.test.controller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -43,6 +44,23 @@ public class ReplyController {
 		
 		
 	}
+	
+	
+	//json방식의 데이터만 처리하고, 문자열을 반환한다.
+	@PostMapping(value="/new",
+					consumes= "application/json",
+					produces = {MediaType.TEXT_PLAIN_VALUE})
+	public ResponseEntity<String> create(@RequestBody ReplyVO vo){
+		
+		log.info(vo);
+		
+		int result = service.insert(vo);
+		
+		log.info("result : " + result);
+		
+		return result == 1? new ResponseEntity<>(HttpStatus.OK): new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+
 
 	
 	

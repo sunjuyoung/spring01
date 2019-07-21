@@ -59,10 +59,10 @@ div.content-body {
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-
+<script type="text/javascript" src="/resources/js/reply.js"></script>
 <script>
 	$(document).ready(function() {
-
+	
 						var replyUL = $(".chat");
 						var bnoValue = ${board.bno};
 
@@ -121,9 +121,7 @@ div.content-body {
 						var actionForm = $("#actionForm"); //페이지 쪽수 
 						var selected = $("select[name='amount']"); //게시물 수 선택
 						/* 페이지 버튼 이벤트 작업 */
-						$("a.pageBtn").on(
-								"click",
-								function(e) {
+						$("a.pageBtn").on("click",function(e) {
 
 									e.preventDefault();
 
@@ -139,6 +137,31 @@ div.content-body {
 									actionForm.submit();
 
 								});
+						
+						var newReplyaction = $("#newReply");
+						$("button.newReplyBtn").on("click",function(e) {
+							e.preventDefault();
+							
+							
+							console.log(newReplyaction.find("input[name='replyer']").val());
+							console.log( newReplyaction.find("textarea#reply").val());
+							console.log(bnoValue);
+							
+							var reply ={
+							replyer : newReplyaction.find("input[name='replyer']").val(),
+							reply : newReplyaction.find("textarea#reply").val(),
+							bno : bnoValue
+							};
+							
+							console.log(reply);
+							replyService.add(reply,function(result){
+								
+								alert(result);
+							});
+							
+							
+							
+						});
 
 					});
 </script>
@@ -220,7 +243,7 @@ div.content-body {
 							<div class="panel-heading">
 								<i class="fa fa-comments fa-fw"></i> Reply
 
-								<button id="addReplyBtn" class="btn btn-primary btn-sm pull-right" data-oper="new">New</button>
+								<button id="addReplyBtn" class="btn btn-primary btn-sm pull-right" data-oper="new" data-toggle="collapse" data-target="#newReply"">New</button>
 							</div>
 
 
@@ -234,7 +257,26 @@ div.content-body {
 
 								</ul>
 								<!-- ./ end ul -->
+								<form id="newReply" action="/reply/new" method="post">
+									<div id="newReply" class="collapse">
 
+										<div class="form-group">
+											<label class="col-sm-2 control-label">이름</label>
+											<div class="col-sm-3">
+												<input class="form-control" id="replyer" type="text" name="replyer">
+											</div>
+
+
+										</div>
+
+										<textarea class="form-control" rows="2" id="reply" name="reply" ></textarea>
+										<button type="button" class="newReplyBtn">입력</button>
+										<input type="hidden" name="bno" value="${board.bno }">
+										 <input type="hidden" name="pageNum" value="${page.cri.pageNum }"> 
+										 <input type="hidden" name="amount" value="${page.cri.amount }">
+
+									</div>
+								</form>
 
 								<!-- ./ end row -->
 								<!----------------------  페이징 ------------------------->
@@ -266,7 +308,8 @@ div.content-body {
 				<!-- ./ end row -->
 			</div>
 			<form id="actionForm" action="/reply/list" method="get">
-				<input type="hidden" name="pageNum" value="${page.cri.pageNum }"> <input type="hidden" name="amount" value="${page.cri.amount }">
+				<input type="hidden" name="pageNum" value="${page.cri.pageNum }"> 
+				<input type="hidden" name="amount" value="${page.cri.amount }">
 			</form>
 
 
