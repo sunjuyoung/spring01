@@ -37,7 +37,7 @@ where rn >(#{pageNum} -1) *#{amount}
 <![CDATA[
 
 select /*+ INDEX_DESC (tb1_board pk_board)*/ * from (
-select   /*+ INDEX_DESC (tb1_board pk_board)*/ bno,title,content,writer,regdate,updateDate,replyCnt,rownum rn 
+select   /*+ INDEX_DESC (tb1_board pk_board)*/ bno,title,userid,content,writer,regdate,updateDate,replyCnt,rownum rn 
 from tb1_board  where
 ]]>
 

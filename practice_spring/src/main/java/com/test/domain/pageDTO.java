@@ -23,6 +23,8 @@ public class pageDTO {
 		
 		this.total = total;
 		
+		
+		
 		log.info("total :" + this.total);
 		
 		this.endPage = (int) (Math.ceil(cri.getPageNum() / 10.0)) * 10;

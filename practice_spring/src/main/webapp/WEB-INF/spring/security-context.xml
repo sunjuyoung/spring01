@@ -6,20 +6,29 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 
 
-	<bean id="customAccessDeniedHandler"
-		class="com.test.security.CustomAccessDeniedHandler"></bean>
 	<bean id="customLoginSuccessHandler"
 		class="com.test.security.CustomLoginSuccessHandler"></bean>
+
+	<bean id="customAccessDeniedHandler"
+		class="com.test.security.CustomAccessDeniedHandler"></bean>
+
+	<!-- userDetailsService -->
+	<bean id="customUserDetailsService"
+		class="com.test.security.CustomUserDetailsService"></bean>
+
+	<bean id="bcryptPasswordEncoder"
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
+
 
 
 	<security:http>
 
 		<security:intercept-url pattern="/reply/list"
-			access="hasRole('ROLE_MEMBER')" />
-					<security:intercept-url pattern="/reply/get"
-			access="hasRole('ROLE_MEMBER')" />
-					<security:intercept-url pattern="/reply/new"
-			access="hasRole('ROLE_MEMBER')" />
+			access="hasRole('ROLE_MEMBER') or hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/reply/get"
+			access="hasRole('ROLE_MEMBER') or hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/reply/new"
+			access="hasRole('ROLE_MEMBER') or hasRole('ROLE_ADMIN')" />
 
 		<security:access-denied-handler
 			ref="customAccessDeniedHandler" />
@@ -35,28 +44,14 @@
 	</security:http>
 
 
-
-
 	<security:authentication-manager>
-		<security:authentication-provider>
+		<security:authentication-provider
+			user-service-ref="customUserDetailsService">
 
-			<security:user-service>
-
-				<security:user name="admin" password="{noop}admin"
-					authorities="ROLE_MEMBER" />
-				<security:user name="memeber" password="{noop}member"
-					authorities="ROLE_MEMBER" />
-				<security:user name="sun" password="{noop}sun"
-					authorities="ROLE_ALL" />
-
-			</security:user-service>
-
+			<security:password-encoder
+				ref="bcryptPasswordEncoder" />
 
 		</security:authentication-provider>
-
-
-
-
 	</security:authentication-manager>
 
 

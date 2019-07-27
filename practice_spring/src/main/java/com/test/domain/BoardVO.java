@@ -1,8 +1,7 @@
 package com.test.domain;
 
 import java.util.Date;
-
-import org.springframework.format.annotation.DateTimeFormat;
+import java.util.List;
 
 import lombok.Data;
 
@@ -22,6 +21,10 @@ public class BoardVO {
 	private String writer;
 	
 
+	private String userid;
+	
+	private MemberVO member;
+	
 	
 	
 }

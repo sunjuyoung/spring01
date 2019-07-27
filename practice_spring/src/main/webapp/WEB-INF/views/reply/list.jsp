@@ -2,6 +2,7 @@
 <%-- jstl-1.2.jar 파일 필요 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 
 <!DOCTYPE html>
@@ -192,7 +193,7 @@ input {
 						<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
 						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 회원정보 </a>
 							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a>
+								<a class="dropdown-item" href="#"><sec:authentication property="principal.member.userName" /></a> <a class="dropdown-item" href="#">Another action</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal">로그아웃</a>
 							</div></li>
@@ -210,12 +211,12 @@ input {
 						<!-- /.panel -->
 						<div class="panel panel-default">
 							<div class="panel-heading">
-								<i class="fa fa-comments fa-fw"></i> Board List <c:out value="${ID }"/>
+								<i class="fa fa-comments fa-fw"></i> Board List 
 								<!-- -------------------게시물 수---------------------  -->
 								<select name="amount">
-									<option value="5">게시물 수</option>
-									<option value="5">5</option>
-									<option value="10">10</option>
+									<option value="10">게시물 수</option>
+									
+									<option value="15">15</option>
 									<option value="20">20</option>
 								</select>
 
@@ -239,7 +240,7 @@ input {
 										<tbody>
 											<c:forEach items="#{list }" var="board">
 												<tr>
-													<td>${board.writer }</td>
+													<td>${board.userid }</td>
 													<td><a class="move" href='<c:out value="${board.bno }" />'>${board.title }</a></td>
 													<td><fmt:formatDate value="${board.regDate }" pattern="yyyy-MM-dd" /></td>
 												</tr>

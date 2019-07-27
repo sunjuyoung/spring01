@@ -18,7 +18,7 @@ public class Criteria {
 	private String type,keyword; //검색조건
 
 	  public Criteria() {
-		    this(5, 1);
+		    this(10, 1);
 		  }
 	
 	
