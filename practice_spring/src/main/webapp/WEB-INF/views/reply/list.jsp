@@ -45,6 +45,10 @@ form#searchForm {
 	float: right;
 }
 
+a.newBoard{
+float: right;
+}
+
 input {
 	border: 0px solid transparent;
 }
@@ -65,7 +69,8 @@ input {
 			.ready(
 					function() {
 						
-						
+					
+					
 						
 						
 
@@ -157,6 +162,31 @@ input {
 
 							logout.submit();
 						});
+						
+						
+						var menu = $("div.list-group");
+						
+						$("div.list-group a").on("click",function(e){
+							
+							var site = $(this).text();
+							var auth = $("input[name='userInfo']").val();
+							
+							console.log(auth);
+							
+							if(site=='Members' && auth !='ROLE_ADMIN'){
+								alert("등업신청해주세요");
+								return;
+							}
+			
+							console.log(site);
+							
+							$(this).attr("href",site.toLowerCase());
+							
+							
+							
+						});
+						
+						
 
 					});
 </script>
@@ -172,7 +202,12 @@ input {
 		<div class="bg-light border-right" id="sidebar-wrapper">
 			<div class="sidebar-heading">Start Bootstrap</div>
 			<div class="list-group list-group-flush">
-				<a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a> <a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a> <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a> <a href="#" class="list-group-item list-group-item-action bg-light">Events</a> <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a> <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
+				<a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a> 
+				<a href="#" class="list-group-item list-group-item-action bg-light">Gallery</a> 
+				<a href="#" class="list-group-item list-group-item-action bg-light">Books</a> 
+				<a href="#" class="list-group-item list-group-item-action bg-light">Movies</a> 
+				<a href="#" class="list-group-item list-group-item-action bg-light">Members</a>
+				 <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
 			</div>
 		</div>
 		<!-- /#sidebar-wrapper -->
@@ -193,7 +228,8 @@ input {
 						<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
 						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 회원정보 </a>
 							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="#"><sec:authentication property="principal.member.userName" /></a> <a class="dropdown-item" href="#">Another action</a>
+								<a class="dropdown-item" href="#"><sec:authentication property="principal.member.userName" /></a> 
+								<a class="dropdown-item" href="#">Another action</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal">로그아웃</a>
 							</div></li>
@@ -220,7 +256,7 @@ input {
 									<option value="20">20</option>
 								</select>
 
-								<button id="addReplyBtn" class="btn btn-primary btn-sm pull-right" data-oper="new">New</button>
+								<a class="newBoard" href="/reply/insertPage" >글쓰기</a>
 							</div>
 
 
@@ -318,7 +354,7 @@ input {
 					<h4 class="modal-title">Modal Header</h4>
 				</div>
 				<div class="modal-body">
-					<p>Some text in the modal.</p>
+					<p>Some text in the modal .</p>
 				</div>
 				<div class="modal-footer">
 
@@ -330,6 +366,7 @@ input {
 
 		</div>
 	</div>
+<%-- <input name="userInfo" type="hidden" value='<sec:authentication property="principal.member.authList[0].auth" />'> --%>
 
 
 	<form id="logout" action="/customLogout" method="post">

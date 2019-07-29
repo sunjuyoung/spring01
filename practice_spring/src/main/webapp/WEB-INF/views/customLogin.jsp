@@ -79,6 +79,9 @@ $(document).ready(function(){
 									<div class="invalid-feedback">
 										Password is required
 									</div>
+									<div>
+									<input type="checkbox" name="remember-me"> Remember Me
+									</div>
 								</div>
 
 

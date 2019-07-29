@@ -112,6 +112,23 @@ select bno,content,title from tb1_board where bno = #{bno}
 	</sql>
 
 
+<!--  게시물 추가  -->
+<insert id="newBoard" >
+
+<selectKey keyProperty="bno" order="BEFORE" resultType="long">
+select max(bno)+1 from tb1_board
+</selectKey>
+
+<![CDATA[
+
+insert into tb1_board (bno,title,content,writer,userid) values 
+
+(#{bno},#{title},#{content},#{writer},#{userid})
+
+]]>
+
+
+</insert>
 
 
 

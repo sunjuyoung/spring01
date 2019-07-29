@@ -33,10 +33,29 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public BoardVO get(BoardVO vo) {
 		
-		
+		log.info("get : " + vo);
 		return mapper.get(vo);
 	}
 
+	@Override
+	public int insert(BoardVO vo) {
+		log.info("insert : " + vo);
+		return mapper.newBoard(vo);
+	}
+
+	@Override
+	public int remove(Long bno) {
+		log.info("remove : " + bno);
+		return 0;
+	}
+
+	@Override
+	public int update(BoardVO vo) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	
 	
 	
 }
