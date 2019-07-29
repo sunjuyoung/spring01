@@ -27,7 +27,7 @@ commit;
 select * from users;
 select * from authorities;
 
-
+----------------------------------------------------------------------------------
 
 
 -- 650p
@@ -46,6 +46,15 @@ create table tbl_member_auth (
      auth varchar2(50) not null,
      constraint fk_member_auth foreign key(userid) references tbl_member(userid)
 );
+
+-- 시큐리티의 로그인 정보 유지하는 테이블
+create table persistent_logins(
+username varchar2(64) not null,
+series varchar2(64) primary key,
+token varchar2(64) not null,
+last_used TIMESTAMP not null
+);
+
 
 
 select * from tbl_member;
@@ -70,6 +79,26 @@ select
 	mem.userid,userpw,username,enabled,regdate,updatedate,auth 
 from
 	tbl_member mem LEFT OUTER JOIN tbl_member_auth auth on mem.userid = auth.userid 
-where mem.userid='user15';
+where mem.userid='manager80';
+
+
+
+
+
+
+alter table tb1_board add   userid varchar2(50);
+
+alter table tb1_board add constraint fk_tb1_board_userid foreign key(userid) references tbl_member(userid);
+
+select count(*) from tb1_board;
+
+alter table tbl_member add  email varchar2(50);
+
+select * from tbl_member;
+ 
+ select * from tb1_board;
+ 
+
+update tb1_board set userid = 'admin90' where  bno>=33899  and bno<34021;
 
 
