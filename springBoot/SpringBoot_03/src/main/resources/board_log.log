@@ -1,0 +1,211 @@
+2019-07-30 17:44:12.009  INFO 10208 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-07-30 17:44:12.011  INFO 10208 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-07-30 17:44:12.676  INFO 10208 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-07-30 17:44:12.692  INFO 10208 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-30 17:44:12.692  INFO 10208 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-30 17:44:12.750  INFO 10208 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-30 17:44:12.751  INFO 10208 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 740 ms
+2019-07-30 17:44:12.892  INFO 10208 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-30 17:44:13.001  INFO 10208 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-30 17:44:13.044  INFO 10208 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-30 17:44:13.047  WARN 10208 --- [restartedMain] com.test.LoggingRunner                   : WARN ë©”ì‹œì§€
+2019-07-30 17:44:13.047 ERROR 10208 --- [restartedMain] com.test.LoggingRunner                   : ERROR ë©”ì‹œì§€
+2019-07-30 17:44:48.964  INFO 10208 --- [Thread-6] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-30 17:44:49.388  INFO 10208 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-07-30 17:44:49.389  INFO 10208 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-30 17:44:49.389  INFO 10208 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-30 17:44:49.399  INFO 10208 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-30 17:44:49.399  INFO 10208 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 198 ms
+2019-07-30 17:44:49.434  INFO 10208 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-30 17:44:49.466  INFO 10208 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-30 17:44:49.477  INFO 10208 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-30 17:44:49.478  WARN 10208 --- [restartedMain] com.test.LoggingRunner                   : WARN ë©”ì‹œì§€
+2019-07-30 17:44:49.478 ERROR 10208 --- [restartedMain] com.test.LoggingRunner                   : ERROR ë©”ì‹œì§€
+2019-07-30 17:44:49.479  INFO 10208 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-07-30 17:44:51.924  INFO 10208 --- [Thread-11] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-30 17:44:52.333  INFO 10208 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-07-30 17:44:52.334  INFO 10208 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-30 17:44:52.334  INFO 10208 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-30 17:44:52.345  INFO 10208 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-30 17:44:52.345  INFO 10208 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 187 ms
+2019-07-30 17:44:52.380  INFO 10208 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-30 17:44:52.409  INFO 10208 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-30 17:44:52.420  INFO 10208 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-30 17:44:52.421  WARN 10208 --- [restartedMain] com.test.LoggingRunner                   : WARN ë©”ì‹œì§€
+2019-07-30 17:44:52.421 ERROR 10208 --- [restartedMain] com.test.LoggingRunner                   : ERROR ë©”ì‹œì§€
+2019-07-30 17:44:52.421  INFO 10208 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-07-30 17:48:06.779  INFO 10208 --- [Thread-17] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-30 17:48:07.343  INFO 10208 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-07-30 17:48:07.344  INFO 10208 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-30 17:48:07.344  INFO 10208 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-30 17:48:07.354  INFO 10208 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-30 17:48:07.354  INFO 10208 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 277 ms
+2019-07-30 17:48:07.385  INFO 10208 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-30 17:48:07.411  INFO 10208 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-30 17:48:07.420  INFO 10208 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-30 17:48:07.421  WARN 10208 --- [restartedMain] com.test.LoggingRunner                   : WARN ë©”ì‹œì§€
+2019-07-30 17:48:07.421 ERROR 10208 --- [restartedMain] com.test.LoggingRunner                   : ERROR ë©”ì‹œì§€
+2019-07-30 17:48:07.421  INFO 10208 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-07-30 17:48:22.425  INFO 5488 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-30 17:48:22.747  INFO 5488 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2019-07-30 17:48:22.747  INFO 5488 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2019-07-30 17:48:22.763  INFO 5488 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 16 ms
+2019-07-30 17:48:22.793  WARN 5488 --- [main] com.test.LoggingRunner                   : WARN ¸Þ½ÃÁö
+2019-07-30 17:48:22.793 ERROR 5488 --- [main] com.test.LoggingRunner                   : ERROR ¸Þ½ÃÁö
+2019-07-30 17:48:22.932  INFO 5488 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.test.PropertiesTest], using SpringBootContextLoader
+2019-07-30 17:48:22.933  INFO 5488 --- [main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.test.PropertiesTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-07-30 17:48:22.937  INFO 5488 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-07-30 17:48:22.939  INFO 5488 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@bbf9e07, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6ff6efdc, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@2b289ac9, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@4eb1c69, org.springframework.test.context.support.DirtiesContextTestExecutionListener@73d3e555, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@2b037cfc, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@44924587, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@18460128, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@74d3b638, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4487c0c2]
+2019-07-30 17:48:22.997  WARN 5488 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardController': Unsatisfied dependency expressed through field 'service'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.test.service.BoardService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2019-07-30 17:48:23.002 ERROR 5488 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field service in com.test.controller.BoardController required a bean of type 'com.test.service.BoardService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.test.service.BoardService' in your configuration.
+
+2019-07-30 17:48:23.007 ERROR 5488 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@bbf9e07] to prepare test instance [com.test.PropertiesTest@2b34e38c]
+
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125) ~[spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108) ~[spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246) ~[spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365) [surefire-junit4-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:273) [surefire-junit4-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238) [surefire-junit4-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159) [surefire-junit4-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126) [surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418) [surefire-booter-2.22.2.jar:2.22.2]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardController': Unsatisfied dependency expressed through field 'service'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.test.service.BoardService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:596) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:845) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:119) ~[spring-boot-test-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117) ~[spring-test-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	... 27 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.test.service.BoardService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1658) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1217) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	... 45 common frames omitted
+
+2019-07-30 17:48:23.011  INFO 5488 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.test.SpringBoot03ApplicationTests], using SpringBootContextLoader
+2019-07-30 17:48:23.014  INFO 5488 --- [main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.test.SpringBoot03ApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-07-30 17:48:23.015  INFO 5488 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.test.SpringBoot03ApplicationTests]: SpringBoot03ApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-07-30 17:48:23.018  INFO 5488 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.test.SpringBoot03Application for test class com.test.SpringBoot03ApplicationTests
+2019-07-30 17:48:23.021  INFO 5488 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-07-30 17:48:23.022  INFO 5488 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@67f3d192, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1c9e07c6, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@73010765, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2b10ace9, org.springframework.test.context.support.DirtiesContextTestExecutionListener@52169758, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@3eda0aeb, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@459b187a, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@6b4283c4, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@d0865a3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@636bbbbb]
+2019-07-30 17:48:23.526  INFO 5488 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-30 17:48:23.678  WARN 5488 --- [main] com.test.LoggingRunner                   : WARN ¸Þ½ÃÁö
+2019-07-30 17:48:23.679 ERROR 5488 --- [main] com.test.LoggingRunner                   : ERROR ¸Þ½ÃÁö
+2019-07-30 17:48:23.688  INFO 5488 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-30 17:48:23.688  INFO 5488 --- [Thread-7] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-30 17:48:25.963  INFO 10208 --- [Thread-23] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-30 17:48:26.360  INFO 10208 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-07-30 17:48:26.361  INFO 10208 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-30 17:48:26.361  INFO 10208 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-30 17:48:26.373  INFO 10208 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-30 17:48:26.373  INFO 10208 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 173 ms
+2019-07-30 17:48:26.404  INFO 10208 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-30 17:48:26.428  INFO 10208 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-30 17:48:26.437  INFO 10208 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-30 17:48:26.438  WARN 10208 --- [restartedMain] com.test.LoggingRunner                   : WARN ë©”ì‹œì§€
+2019-07-30 17:48:26.438 ERROR 10208 --- [restartedMain] com.test.LoggingRunner                   : ERROR ë©”ì‹œì§€
+2019-07-30 17:48:26.439  INFO 10208 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-07-30 17:50:56.101  INFO 10208 --- [Thread-29] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-30 17:50:56.583  INFO 10208 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-07-30 17:50:56.587  INFO 10208 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-30 17:50:56.587  INFO 10208 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-30 17:50:56.609  INFO 10208 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-30 17:50:56.610  INFO 10208 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 292 ms
+2019-07-30 17:50:56.673  INFO 10208 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-30 17:50:56.747  INFO 10208 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-30 17:50:56.764  INFO 10208 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-30 17:50:56.766  WARN 10208 --- [restartedMain] com.test.LoggingRunner                   : WARN ë©”ì‹œì§€
+2019-07-30 17:50:56.766 ERROR 10208 --- [restartedMain] com.test.LoggingRunner                   : ERROR ë©”ì‹œì§€
+2019-07-30 17:50:56.767  INFO 10208 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-07-30 17:50:58.396  INFO 10916 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-30 17:50:58.643  INFO 10916 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2019-07-30 17:50:58.643  INFO 10916 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2019-07-30 17:50:58.656  INFO 10916 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 13 ms
+2019-07-30 17:50:58.683  WARN 10916 --- [main] com.test.LoggingRunner                   : WARN ¸Þ½ÃÁö
+2019-07-30 17:50:58.683 ERROR 10916 --- [main] com.test.LoggingRunner                   : ERROR ¸Þ½ÃÁö
+2019-07-30 17:50:58.818  INFO 10916 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.test.PropertiesTest], using SpringBootContextLoader
+2019-07-30 17:50:58.818  INFO 10916 --- [main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.test.PropertiesTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-07-30 17:50:58.819  INFO 10916 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.test.PropertiesTest]: PropertiesTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-07-30 17:50:58.821  INFO 10916 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.test.SpringBoot03Application for test class com.test.PropertiesTest
+2019-07-30 17:50:58.823  INFO 10916 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-07-30 17:50:58.824  INFO 10916 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@15b82644, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@20576557, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@574cd322, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@45c2e0a6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@119c745c, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@a7ad6e5, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3b1ed14b, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@690bc15e, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@1bc776b7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@475646d4]
+2019-07-30 17:50:59.278  INFO 10916 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-30 17:50:59.435  WARN 10916 --- [main] com.test.LoggingRunner                   : WARN ¸Þ½ÃÁö
+2019-07-30 17:50:59.435 ERROR 10916 --- [main] com.test.LoggingRunner                   : ERROR ¸Þ½ÃÁö
+2019-07-30 17:50:59.440  INFO 10916 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.test.SpringBoot03ApplicationTests], using SpringBootContextLoader
+2019-07-30 17:50:59.441  INFO 10916 --- [main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.test.SpringBoot03ApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-07-30 17:50:59.441  INFO 10916 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.test.SpringBoot03ApplicationTests]: SpringBoot03ApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-07-30 17:50:59.442  INFO 10916 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.test.SpringBoot03Application for test class com.test.SpringBoot03ApplicationTests
+2019-07-30 17:50:59.445  INFO 10916 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-07-30 17:50:59.446  INFO 10916 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@18b8d173, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@73844119, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@44f24a20, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@1859e2a4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@46349b95, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@176996c3, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@411c6d44, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1687eb01, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@748d2277, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@2f897dab]
+2019-07-30 17:50:59.819  INFO 10916 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-30 17:50:59.949  WARN 10916 --- [main] com.test.LoggingRunner                   : WARN ¸Þ½ÃÁö
+2019-07-30 17:50:59.949 ERROR 10916 --- [main] com.test.LoggingRunner                   : ERROR ¸Þ½ÃÁö
+2019-07-30 17:50:59.961  INFO 10916 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-30 17:50:59.961  INFO 10916 --- [Thread-7] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-30 17:50:59.961  INFO 10916 --- [Thread-9] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-30 17:51:02.207  INFO 10208 --- [Thread-35] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-30 17:51:02.578  INFO 10208 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-07-30 17:51:02.579  INFO 10208 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-30 17:51:02.579  INFO 10208 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-30 17:51:02.588  INFO 10208 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-30 17:51:02.588  INFO 10208 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 172 ms
+2019-07-30 17:51:02.619  INFO 10208 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-30 17:51:02.643  INFO 10208 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-07-30 17:51:02.652  INFO 10208 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-30 17:51:02.653  WARN 10208 --- [restartedMain] com.test.LoggingRunner                   : WARN ë©”ì‹œì§€
+2019-07-30 17:51:02.653 ERROR 10208 --- [restartedMain] com.test.LoggingRunner                   : ERROR ë©”ì‹œì§€
+2019-07-30 17:51:02.653  INFO 10208 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-07-30 17:51:39.613  INFO 10208 --- [Thread-41] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
