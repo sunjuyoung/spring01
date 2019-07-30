@@ -46,13 +46,13 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public int remove(Long bno) {
 		log.info("remove : " + bno);
-		return 0;
+		return mapper.remove(bno);
 	}
 
 	@Override
 	public int update(BoardVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
+		log.info("modify : " + vo);
+		return mapper.update(vo);
 	}
 
 	

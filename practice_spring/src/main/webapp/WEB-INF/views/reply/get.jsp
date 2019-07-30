@@ -40,6 +40,10 @@ form#searchForm {
 	float: right;
 }
 
+button {
+	float: right;
+}
+
 input {
 	border: 0px solid transparent;
 }
@@ -61,8 +65,10 @@ div.content-body {
 
 <script type="text/javascript" src="/resources/js/reply.js"></script>
 <script>
-	$(document).ready(function() {
-	
+	$(document)
+			.ready(
+					function() {
+
 						var replyUL = $(".chat");
 						var bnoValue = ${board.bno};
 
@@ -121,7 +127,9 @@ div.content-body {
 						var actionForm = $("#actionForm"); //페이지 쪽수 
 						var selected = $("select[name='amount']"); //게시물 수 선택
 						/* 페이지 버튼 이벤트 작업 */
-						$("a.pageBtn").on("click",function(e) {
+						$("a.pageBtn").on(
+								"click",
+								function(e) {
 
 									e.preventDefault();
 
@@ -137,30 +145,56 @@ div.content-body {
 									actionForm.submit();
 
 								});
-						
+
 						var newReplyaction = $("#newReply");
-						$("button.newReplyBtn").on("click",function(e) {
+						$("button.newReplyBtn").on(
+								"click",
+								function(e) {
+									e.preventDefault();
+
+									console.log(newReplyaction.find(
+											"input[name='replyer']").val());
+									console.log(newReplyaction.find(
+											"textarea#reply").val());
+									console.log(bnoValue);
+
+									var reply = {
+										replyer : newReplyaction.find(
+												"input[name='replyer']").val(),
+										reply : newReplyaction.find(
+												"textarea#reply").val(),
+										bno : bnoValue
+									};
+
+									console.log(reply);
+									replyService.add(reply, function(result) {
+
+										alert(result);
+									});
+
+								});
+
+						var form = $("form#DnM");
+
+						$("button#delBoard").on("click", function(e) {
+
+							if (confirm("삭제하시겠습니까?")) {
+
+								form.submit();
+							} else {
+
+								return false;
+							}
+
+						});
+
+						$("button#modifyBoard").on("click", function(e) {
 							e.preventDefault();
-							
-							
-							console.log(newReplyaction.find("input[name='replyer']").val());
-							console.log( newReplyaction.find("textarea#reply").val());
-							console.log(bnoValue);
-							
-							var reply ={
-							replyer : newReplyaction.find("input[name='replyer']").val(),
-							reply : newReplyaction.find("textarea#reply").val(),
-							bno : bnoValue
-							};
-							
-							console.log(reply);
-							replyService.add(reply,function(result){
-								
-								alert(result);
-							});
-							
-							
-							
+
+							form.attr("action", "/reply/modify");
+							form.attr("method", "get");
+							form.submit();
+
 						});
 
 					});
@@ -175,7 +209,7 @@ div.content-body {
 		<div class="bg-light border-right" id="sidebar-wrapper">
 			<div class="sidebar-heading">Start Bootstrap</div>
 			<div class="list-group list-group-flush">
-				<a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a> <a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a> <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a> <a href="#" class="list-group-item list-group-item-action bg-light">Events</a> <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a> <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
+				<a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a> <a href="#" class="list-group-item list-group-item-action bg-light">Gallery</a> <a href="#" class="list-group-item list-group-item-action bg-light">Books</a> <a href="#" class="list-group-item list-group-item-action bg-light">Movies</a> <a href="#" class="list-group-item list-group-item-action bg-light">Members</a> <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
 			</div>
 		</div>
 		<!-- /#sidebar-wrapper -->
@@ -215,9 +249,15 @@ div.content-body {
 						<!-- /.panel -->
 						<div class="panel panel-default">
 							<div class="panel-heading">
-								<i class="fa fa-comments fa-fw"></i>
+								<i class="fa fa-comments fa-fw"></i><label>제목 : </label>
 								<c:out value="${board.title }" />
 
+								<form id="DnM" action="/reply/delete" method="POST">
+
+									<button type="submit" id="delBoard">삭제</button>
+									<button type="button" id="modifyBoard">수정</button>
+									<input type="hidden" name="bno" value="${board.bno }"> <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token }">
+								</form>
 							</div>
 
 
@@ -269,11 +309,9 @@ div.content-body {
 
 										</div>
 
-										<textarea class="form-control" rows="2" id="reply" name="reply" ></textarea>
+										<textarea class="form-control" rows="2" id="reply" name="reply"></textarea>
 										<button type="button" class="newReplyBtn">입력</button>
-										<input type="hidden" name="bno" value="${board.bno }">
-										 <input type="hidden" name="pageNum" value="${page.cri.pageNum }"> 
-										 <input type="hidden" name="amount" value="${page.cri.amount }">
+										<input type="hidden" name="bno" value="${board.bno }"> <input type="hidden" name="pageNum" value="${page.cri.pageNum }"> <input type="hidden" name="amount" value="${page.cri.amount }">
 
 									</div>
 								</form>
@@ -308,8 +346,7 @@ div.content-body {
 				<!-- ./ end row -->
 			</div>
 			<form id="actionForm" action="/reply/list" method="get">
-				<input type="hidden" name="pageNum" value="${page.cri.pageNum }"> 
-				<input type="hidden" name="amount" value="${page.cri.amount }">
+				<input type="hidden" name="pageNum" value="${page.cri.pageNum }"> <input type="hidden" name="amount" value="${page.cri.amount }">
 			</form>
 
 

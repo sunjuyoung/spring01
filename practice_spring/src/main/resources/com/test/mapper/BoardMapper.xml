@@ -130,8 +130,21 @@ insert into tb1_board (bno,title,content,writer,userid) values
 
 </insert>
 
+<!--  삭제 -->
+<delete id="remove">
+
+delete from tb1_board where bno=#{bno}
+
+</delete>
 
 
+<!--수정 -->
+<update id="update">
+
+update tb1_board set content=#{content} ,title=#{title} where bno=#{bno}
+
+
+</update>
 
 
 
