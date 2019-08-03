@@ -107,6 +107,13 @@ public class BoardController {
 	}
 	
 
+	//
+	@GetMapping("/books")
+	public void books() {
+		
+		
+		
+	}
 	
 	
 	

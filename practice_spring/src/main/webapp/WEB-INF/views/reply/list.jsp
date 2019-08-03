@@ -102,7 +102,7 @@ input {
 							getForm.submit();
 
 							//	
-							//replyajax(bnoValue);
+							//replyajax(bnoValue); 
 
 						});
 
