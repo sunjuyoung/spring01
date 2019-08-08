@@ -29,6 +29,9 @@
 	 secured-annotations="enabled"
 	></security:global-method-security>
 	
+	<!-- multipartResolver 빈 객체 등록  -->
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver"></beans:bean>
+	
 	
 	
 </beans:beans>

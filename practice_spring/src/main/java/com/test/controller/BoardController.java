@@ -15,6 +15,7 @@ import com.test.domain.Criteria;
 import com.test.domain.pageDTO;
 import com.test.service.BoardService;
 
+import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
 @Controller
@@ -22,13 +23,16 @@ import lombok.extern.log4j.Log4j;
 @RequestMapping("/reply")
 public class BoardController {
 
-	@Autowired
+	@Setter(onMethod_= {@Autowired})
 	private BoardService service;
+	
+
 	
 	
 	//게시판
 	@GetMapping("/list")
 	public void list(Model model,Criteria cri) {
+		
 		
 
 		int total = service.totalCount(cri);
@@ -107,13 +111,7 @@ public class BoardController {
 	}
 	
 
-	//
-	@GetMapping("/books")
-	public void books() {
-		
-		
-		
-	}
+
 	
 	
 	

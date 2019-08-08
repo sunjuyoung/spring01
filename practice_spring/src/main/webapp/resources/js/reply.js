@@ -21,7 +21,7 @@ var replyService = (function() {
 			},
 			error : function(xhr, status, er) {
 				if (error) {
-					console.log("weofijweoifjewoijfjieow");
+					console.log("error");
 					error(er);
 				}
 			}
