@@ -12,7 +12,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 /**
- * Entity implementation class for Entity: Board
+ * 
  *
  */
 @Entity
@@ -24,8 +24,10 @@ import javax.persistence.TemporalType;
 //initialValue 0 지정했기 때문에 처음 저장되는 번호는 0 ,allocationSize 1 지정했기 때문에 
 // ALL_SEQUENCES 테이블에서 값을 한번 꺼낼쓸떄마다 1씩 증 가한다
 /*
- * @TableGenerator(name="BOARD_SEQ_GENERATOR", table="ALL_SEQUENCES",
- * pkColumnValue="BOARD_SEQ", initialValue=0, allocationSize=1)
+ * @TableGenerator(name="BOARD_SEQ_GENERATOR", 
+ * 					table="ALL_SEQUENCES",
+ * 					pkColumnValue="BOARD_SEQ", 
+ * 					initialValue=0, allocationSize=1)    // GenerationType.TABLE
  */
 @SequenceGenerator(name="BOARD_SEQ_GENERATOR",
 					sequenceName="BOARD_SEQUENCE",
@@ -37,7 +39,7 @@ public class Board implements Serializable {
 	//@Column은 엔티티의 변수와 테이블의 칼럼을 매핑할때 사용 title=TITLE 칼럼과 자동으로 매핑
 	//속성 name 이름 지정 nullable null상태여부 설정 기본값 false
 	
-	//Temporal 데이터 타입 매핑할때 사용 TemporalType.DATE,날짜만 출력 , TemporalType.TIME 시간만 출력  TIMESTAMP 모두출력
+	
 	
 	//@Transient 변수를 영속 필드에서 제외
 	
@@ -45,13 +47,16 @@ public class Board implements Serializable {
 	
 	@Id
 	//@GeneratedValue(strategy = GenerationType.TABLE, generator="BOARD_SEQ_GENERATOR") //@Id가 선언된 필드에 기본 키 값을 자동으로 할당한다.
+	//GenerationType.Table : Pk값 생성만을 위한 별도의 테이블이 필요하다
+	//GenerationType.SEQUENCE : 시퀀스 이용 시퀀스를 지원하는 데이터베이스에서만 사용할수 있다
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,
-					generator="BOARD_SEQ_GENERATOR")  //시퀀스를 지원하는 데이터베이스에서만 사용할수 있다
+					generator="BOARD_SEQ_GENERATOR")  
 	private Long seq;
 	private String title;
-	//@Column(nullable=false)m
+	//@Column(nullable=false)
 	private String writer;
 	private String content;
+	//Temporal 데이터 타입 매핑할때 사용 TemporalType.DATE,날짜만 출력 , TemporalType.TIME 시간만 출력  TIMESTAMP 모두출력
 	@Temporal(TemporalType.DATE)
 	private Date createDate;
 	private Long cnt;

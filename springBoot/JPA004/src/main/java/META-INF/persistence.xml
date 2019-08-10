@@ -13,7 +13,7 @@
 		<property name="hibernate.format_sql" value="true"/>
 		<property name="hibernate.use_sql_comments" value="false"/>
 		<property name="hibernate.id.new_generator_mappings" value="true"/> <!--pk컬럼 자동 증가  -->
-		<property name="hibernate.hbm2ddl.auto" value="create"/>
+		<property name="hibernate.hbm2ddl.auto" value="update"/>
 		
 		
 		</properties>
