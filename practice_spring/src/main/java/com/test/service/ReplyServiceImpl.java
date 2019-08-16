@@ -27,7 +27,7 @@ public class ReplyServiceImpl implements ReplyService {
 	}
 
 	@Override
-	public int delete(int rno) {
+	public int delete(Long rno) {
 		
 		log.info("reply delete service");
 		return mapper.delete(rno);

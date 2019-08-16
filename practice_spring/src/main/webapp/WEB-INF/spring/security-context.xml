@@ -6,58 +6,60 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-
+	<bean id="customAccessDeniedHandler"
+		class="com.test.security.CustomAccessDeniedHandler"></bean>
+	<bean id="customLoginSuccessHandler"
+		class="com.test.security.CustomLoginSuccessHandler"></bean>
+	<bean id="bcryptPasswordEncoder"
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
 
 	<!-- userDetailsService -->
 	<bean id="customUserDetailsService"
 		class="com.test.security.CustomUserDetailsService"></bean>
 
-	<bean id="bcryptPasswordEncoder"
-		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
-<!-- 
-	<bean id="customLoginSuccessHandler"
-		class="com.test.security.CustomLoginSuccessHandler"></bean> -->
 
-	<bean id="customAccessDeniedHandler"
-		class="com.test.security.CustomAccessDeniedHandler"></bean>
+
+
+
 
 	<security:http>
 
 
-		<security:intercept-url pattern="/reply/**" 
-			access="hasRole('ROLE_ADMIN')"  />
-			<security:intercept-url pattern="/reply/**" 
-			access="hasAuthority('ROLE_ADMIN')"  />
-						<security:intercept-url pattern="/reply/newBoard" method="POST"
-			access="isAuthenticated()"  />
+		<security:intercept-url pattern="/reply/**"
+			access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/reply/**"
+			access="hasAuthority('ROLE_ADMIN')" />
+		<security:intercept-url
+			pattern="/reply/newBoard" method="POST" access="isAuthenticated()" />
 
 
-			
-			
-			
-<!-- 		<security:intercept-url pattern="/reply/get"
-			access="hasRole('ROLE_MEMBER') or hasRole('ROLE_ADMIN')" />
-		<security:intercept-url pattern="/reply/new"
+
+
+
+		<!-- <security:intercept-url pattern="/reply/get" access="hasRole('ROLE_MEMBER') 
+			or hasRole('ROLE_ADMIN')" /> <security:intercept-url pattern="/reply/new" 
 			access="hasRole('ROLE_MEMBER') or hasRole('ROLE_ADMIN')" /> -->
 
-		
-		
+
+
 
 
 
 		<!-- 로그인 -->
 		<security:form-login login-page="/customLogin" />
-			
+
 		<!--로그아웃 -->
 		<security:logout logout-url="/customLogout"
 			invalidate-session="true" />
-			
-			<security:access-denied-handler
+
+		<security:access-denied-handler
 			ref="customAccessDeniedHandler" />
 
-			<security:remember-me data-source-ref="dataSource" token-validity-seconds="604800"/>
-						
-			<security:logout logout-url="/customLogout" invalidate-session="true"  delete-cookies="remember-me,JSESSION_ID"/>
+		<security:remember-me
+			data-source-ref="dataSource" token-validity-seconds="604800" />
+
+		<security:logout logout-url="/customLogout"
+			invalidate-session="true" delete-cookies="remember-me,JSESSION_ID" />
 
 
 	</security:http>
@@ -72,19 +74,6 @@
 
 		</security:authentication-provider>
 	</security:authentication-manager>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

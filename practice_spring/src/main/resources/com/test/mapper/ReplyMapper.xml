@@ -27,6 +27,12 @@ insert into tb1_reply (rno,bno,reply,replyer) values (seq_reply.nextval,#{bno},#
 
 </insert>
 
+
+<delete id="delete">
+	
+	delete from tb1_reply where rno=#{rno}
+
+</delete>
     
   
   </mapper>

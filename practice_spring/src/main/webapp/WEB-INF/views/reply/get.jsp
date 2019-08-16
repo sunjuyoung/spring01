@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%-- jstl-1.2.jar 파일 필요 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -65,139 +66,167 @@ div.content-body {
 
 <script type="text/javascript" src="/resources/js/reply.js"></script>
 <script>
-	$(document)
-			.ready(
-					function() {
+	$(document).ready(function() {
+		
+		var csrfHeaderName = "${_csrf.headerName}";
+		var csrfTokenValue = "${_csrf.token}";
 
-						var replyUL = $(".chat");
-						var bnoValue = ${board.bno};
+		
+	    var replyer = null;
+	    
+	    <sec:authorize access="isAuthenticated()">
+	    
+	    replyer = '<sec:authentication property="principal.username"/>';   
+	    
+	</sec:authorize>
 
-						console.log(bnoValue);
-						console.log(replyUL);
-						/* 댓글 출력 */
-						ajaxList(
-								bnoValue,
-								function(list) {
 
-									var str = "";
+		//Ajax Spring secutity header
+		//beforeSend 대신 사용가능
+		//모든  Ajax전송시 CSRF토큰을 같이 전송하도록 셋팅
+		$(document).ajaxSend(function(e,xhr,options){
+			xhr.setRequestHeader(csrfHeaderName,csrfTokenValue);
+		});
 
-									console.log(list.length);
+		var replyUL = $(".chat");
+		var bnoValue = ${board.bno};
 
-									for (var i = 0, len = list.length || 0; i < len; i++) {
-										str += "<li class='left clearfix' data-rno='"+list[i].rno+"'  data-replyer='"+list[i].replyer+"'>";
-										str += "  <div><div class='header'><strong class='primary-font' style='font-size:80%;'>["
-												+ list[i].rno
-												+ "] "
-												+ list[i].replyer + "</strong>";
-										str += " <a href='#'><img src='/resources/img/icon_delete_x.png'  width='13' height='14' title='replyD' alt='"+list[i].rno+"'></a> ";
-										str += " <a href='#'><img src='/resources/img/icon_Modify_pen.png'  width='13' height='14' title='replyM'  alt='"+list[i].rno+"'></a> ";
-										str += "    <small class='pull-right text-muted'>"
-												+ list[i].replyDate
-												+ "</small></div>";
-										str += "    <p style='font-size:80%;'>"
-												+ list[i].reply
-												+ "</p></div></li>";
+		console.log(bnoValue);
+		console.log(replyUL);
+	
+		showList();
+		
+		
+		
+		/* 댓글 출력 */
+		function showList(){
+			
 
-									}
+		
+			replyService.ajaxList(bnoValue, function(list) {
 
-									console.log(str);
+			var str = "";
 
-									replyUL.html(str);
+			console.log(list.length);
 
-								});
+			for (var i = 0, len = list.length || 0; i < len; i++) {
+				str += "<li class='left clearfix' data-rno='"+list[i].rno+"'  data-replyer='"+list[i].replyer+"'>";
+				str += "  <div><div class='header'><strong class='primary-font' style='font-size:80%;'>[" + list[i].rno + "] " + list[i].replyer + "</strong>";
+				str += " <a href='#' class='replyDel'><img src='/resources/img/icon_delete_x.png'  width='13' height='14' title='replyD' alt='"+list[i].rno+"'></a> ";
+				str += " <a href='#' class='replyMd'><img src='/resources/img/icon_Modify_pen.png'  width='13' height='14' title='replyM'  alt='"+list[i].rno+"'></a> ";
+				str += "    <small class='pull-right text-muted'>" + list[i].replyDate + "</small></div>";
+				str += "    <p style='font-size:80%;'>" + list[i].reply + "</p></div></li>";
 
-						// 리스트출력
-						function ajaxList(bno, callback, error) {
+			}
 
-							console.log("bno2 2222" + bno);
+			//console.log(str);
 
-							$
-									.ajax({
-										type : 'get',
-										url : '/reply/get/' + bno + '.json',
-										contentType : "application/json; charset=utf-8",
-										success : function(result) {
-											if (callback) {
-												callback(result);
-											}
-										}
-									});
-						}
+			replyUL.html(str);
 
-						var actionForm = $("#actionForm"); //페이지 쪽수 
-						var selected = $("select[name='amount']"); //게시물 수 선택
-						/* 페이지 버튼 이벤트 작업 */
-						$("a.pageBtn").on(
-								"click",
-								function(e) {
+		});
 
-									e.preventDefault();
+		}
 
-									actionForm.find("input[name='pageNum']")
-											.val($(this).attr("href")); //클릭시 페이지 쪽수 업데이트 
+		var actionForm = $("#actionForm"); //페이지 쪽수 
+		var selected = $("select[name='amount']"); //게시물 수 선택
+		/* 페이지 버튼 이벤트 작업 */
+		$("a.pageBtn").on("click", function(e) {
 
-									actionForm.find("input[name='amount']")
-											.val(
-													selected.find(
-															"option:selected")
-															.val()); //클릭시 한페이지 게시물 수 업데이트 
+			e.preventDefault();
 
-									actionForm.submit();
+			actionForm.find("input[name='pageNum']").val($(this).attr("href")); //클릭시 페이지 쪽수 업데이트 
 
-								});
+			actionForm.find("input[name='amount']").val(selected.find("option:selected").val()); //클릭시 한페이지 게시물 수 업데이트 
 
-						var newReplyaction = $("#newReply");
-						$("button.newReplyBtn").on(
-								"click",
-								function(e) {
-									e.preventDefault();
+			actionForm.submit();
 
-									console.log(newReplyaction.find(
-											"input[name='replyer']").val());
-									console.log(newReplyaction.find(
-											"textarea#reply").val());
-									console.log(bnoValue);
+		});
 
-									var reply = {
-										replyer : newReplyaction.find(
-												"input[name='replyer']").val(),
-										reply : newReplyaction.find(
-												"textarea#reply").val(),
-										bno : bnoValue
-									};
 
-									console.log(reply);
-									replyService.add(reply, function(result) {
 
-										alert(result);
-									});
 
-								});
 
-						var form = $("form#DnM");
+		//댓글 입력
+		var newReplyaction = $("#newReply");
+		$("button.newReplyBtn").on("click", function(e) {
 
-						$("button#delBoard").on("click", function(e) {
 
-							if (confirm("삭제하시겠습니까?")) {
+			var reply = {
+				replyer : replyer,
+				reply : newReplyaction.find("textarea#reply").val(),
+				bno : bnoValue
+			};
 
-								form.submit();
-							} else {
+	
+			replyService.add(reply, function(result) {
+				alert(result);
+				newReplyaction.find("textarea#reply").val("");
+				
+				$("#addReplyBtn").trigger('click');
+				showList();
+				
+				
+			});
+		
 
-								return false;
-							}
+		});
 
-						});
+		var form = $("form#DnM");
 
-						$("button#modifyBoard").on("click", function(e) {
-							e.preventDefault();
+		//게시물 삭제
+		$("button#delBoard").on("click", function(e) {
 
-							form.attr("action", "/reply/modify");
-							form.attr("method", "get");
-							form.submit();
+			if (confirm("삭제하시겠습니까?")) {
 
-						});
+				form.submit();
+			} else {
 
-					});
+				return false;
+			}
+
+		});
+
+		//게시물 수정
+		$("button#modifyBoard").on("click", function(e) {
+			e.preventDefault();
+
+			form.attr("action", "/reply/modify");
+			form.attr("method", "get");
+			form.submit();
+
+		});
+		
+
+		
+
+		//댓글 삭제 수정
+		$("ul.chat").on("click","img",function(){
+			
+			var title = $(this).attr("title");
+			var rno = $(this).attr("alt");
+			console.log(rno);
+			
+			if(title == "replyD"){
+				replyService.replyDelete(rno,function(result){
+				alert(result);
+					showList();
+				});
+			
+				
+				
+			}else if (title == "replyM"){
+				
+				
+				
+			}
+			
+
+
+		});
+
+		
+
+	});
 </script>
 </head>
 <body>
@@ -300,18 +329,12 @@ div.content-body {
 								<form id="newReply" action="/reply/new" method="post">
 									<div id="newReply" class="collapse">
 
-										<div class="form-group">
-											<label class="col-sm-2 control-label">이름</label>
-											<div class="col-sm-3">
-												<input class="form-control" id="replyer" type="text" name="replyer">
-											</div>
-
-
-										</div>
 
 										<textarea class="form-control" rows="2" id="reply" name="reply"></textarea>
 										<button type="button" class="newReplyBtn">입력</button>
-										<input type="hidden" name="bno" value="${board.bno }"> <input type="hidden" name="pageNum" value="${page.cri.pageNum }"> <input type="hidden" name="amount" value="${page.cri.amount }">
+										<input type="hidden" name="bno" value="${board.bno }"> 
+										<input type="hidden" name="pageNum" value="${page.cri.pageNum }">
+										 <input type="hidden" name="amount" value="${page.cri.amount }">
 
 									</div>
 								</form>

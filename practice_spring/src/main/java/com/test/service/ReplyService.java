@@ -8,7 +8,7 @@ public interface ReplyService {
 	
 	public List<ReplyVO> getListWithPaging(Long bno);
 	
-	public int delete (int rno);
+	public int delete (Long rno);
 	
 	public int modify(ReplyVO vo);
 	
