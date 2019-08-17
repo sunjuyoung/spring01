@@ -7,8 +7,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.test.domain.Board;
 import com.test.persistence.BoardRepository;
 
 @RunWith(SpringRunner.class)
@@ -127,27 +131,25 @@ public class QueryMethodTest {
 
 	// @Query 특정 변수만 조회
 	// List<Objectp[]>
-	
-	
+
 	@Test
 	public void testQueryAnnotationtest3() {
-		//List<Object[]> boardList = boardRepo.queryAnnotationTest3("2");
+		// List<Object[]> boardList = boardRepo.queryAnnotationTest3("2");
 
-	//	for (Object[] board : boardList) {
-	//		System.out.println("====>" + Arrays.toString(board));
-			/*
-			 * ====>[44, 42 번째 게시글, 42테스트] ====>[34, 32 번째 게시글, 32테스트] ====>[31, 29 번째 게시글,
-			 * 29테스트] ====>[30, 28 번째 게시글, 28테스트] ====>[29, 27 번째 게시글, 27테스트] ....
-			 * 
-			 */
+		// for (Object[] board : boardList) {
+		// System.out.println("====>" + Arrays.toString(board));
+		/*
+		 * ====>[44, 42 번째 게시글, 42테스트] ====>[34, 32 번째 게시글, 32테스트] ====>[31, 29 번째 게시글,
+		 * 29테스트] ====>[30, 28 번째 게시글, 28테스트] ====>[29, 27 번째 게시글, 27테스트] ....
+		 * 
+		 */
 
-	//	}
+		// }
 
 	}
 
 	
-	
-	
+	/*
 	// 네이티브 쿼리
 	@Test
 	public void testQueryAnnotationtest4() {
@@ -160,5 +162,22 @@ public class QueryMethodTest {
 		}
 
 	}
+	
+	*/
+	
+	@Test
+	public void testQueryAnnotationTest5() {
+		Pageable paging = PageRequest.of(0, 3, Sort.Direction.DESC,"seq");
+		
+		List<Board> boardList = boardRepo.queryAnnotationTest5(paging);
+		
+		for(Board board : boardList) {
+			System.out.println("----->" + board.toString());
+		}
+		
+	}
+	
+	
+	
 
 }

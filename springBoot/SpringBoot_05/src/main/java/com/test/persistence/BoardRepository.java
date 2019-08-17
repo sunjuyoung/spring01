@@ -48,7 +48,7 @@ public interface BoardRepository extends CrudRepository<Board,Long>{
 	Page<Board> findByTitleContaining(String searchKeyword,Pageable paging);
 	
 	//@Query
-	@Query("SELECT b FROM Board b WHERE b.title like %?1% ORDER BY b.seq DESC")//JPQL검색 대상이 영속성 컨텍스트
+	@Query("SELECT b FROM Board b WHERE b.title like %?1% ORDER BY b.seq DESC")//JPQL검색 대상은 영속성 컨텍스트
 	List<Board> queryAnnotationTest1(String searchKeyword);//searchKeyword가 첫 번째 파라미터 값으로 바인딩된다.
 
 	//JPQL에서는 사용자 입력 값을 바인딩할 수 있도록 위치 기반 파라미터와 이름 기반 파라미터  두 가지를 지원한다.
@@ -62,7 +62,7 @@ public interface BoardRepository extends CrudRepository<Board,Long>{
 	
 	
 	
-	//특정 변수만 조회하기 @Query
+	//엔티티를 통째로 검색하지 않고 특정 변수만 조회하기 @Query
 	//검색 결과로 엔티티 객체가 조회되는 것이 아니라 여러 변수 값들이 조회된다 따라서 리턴타입을 List<Object[]>로 해야한다
 	@Query("SELECT b.seq,b.title,b.writer FROM Board b WHERE b.title like %?1% ORDER BY b.seq DESC")
 	List<Object[]>queryAnnotationTest3(@Param("searchKeyword") String searchKeyword);
@@ -77,8 +77,18 @@ public interface BoardRepository extends CrudRepository<Board,Long>{
 	//네이티브 쿼리
 	//@Query 사용하여 특정 데이터베이스에서만 사용되는 네이티브 쿼리 사용 가능
 	//종속되는 문제가있지만 성능상 특정 데이터베이스에 최적화된 쿼리를 사용해야 하는 경우
+	//from절에 엔티티가  아닌 정상적인 테이블 이름이 사용  select  where 절에서도
 	@Query(value="select seq,title,writer from board where title like '%'||?1||'%' order by seq desc",nativeQuery = true)
 	List<Object[]> queryAnnotationTest4(String searchKeyword);
+	
+	
+	//@Query 페이징 및 정렬
+	//매개변수로 Pageable 인터페이스 추가
+	@Query("SELECT b FROM Board b ORDER BY b.seq DESC")
+	List<Board> queryAnnotationTest5(Pageable paging);
+	
+	
+	
 	
 
 }

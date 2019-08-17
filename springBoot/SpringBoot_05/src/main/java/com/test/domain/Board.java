@@ -26,5 +26,6 @@ public class Board {
 	private Date createDate;
 	private Long cnt;
 	
+	private int hi;
 	
 }

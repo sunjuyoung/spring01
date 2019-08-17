@@ -23,8 +23,11 @@ public class BoardRepositoryTest {
 	//등록
 
 	
+	
 	@Test
 	public void testInsertBoard() {
+	
+		
 		
 		Board board = new Board();
 		board.setCnt(0L);
@@ -35,7 +38,9 @@ public class BoardRepositoryTest {
 		
 		//하나의 엔티티를 등록이나 수정할때
 		//엔티티 영속성 컨텍스트에 저장하기 위해서는 persist() 사용했었다.
+		//CrudREpository인터페이스를 사용할때에는 save()사용한다
 		boardRepo.save(board);
+		
 		
 	}
 	
