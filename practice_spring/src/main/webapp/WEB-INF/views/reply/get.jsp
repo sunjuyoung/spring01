@@ -110,12 +110,12 @@ div.content-body {
 			console.log(list.length);
 
 			for (var i = 0, len = list.length || 0; i < len; i++) {
-				str += "<li class='left clearfix' data-rno='"+list[i].rno+"'  data-replyer='"+list[i].replyer+"'>";
+				str += "<li class='left clearfix' data-reply='"+list[i].reply+"' data-rno='"+list[i].rno+"'  data-replyer='"+list[i].replyer+"'>";
 				str += "  <div><div class='header'><strong class='primary-font' style='font-size:80%;'>[" + list[i].rno + "] " + list[i].replyer + "</strong>";
 				str += " <a href='#' class='replyDel'><img src='/resources/img/icon_delete_x.png'  width='13' height='14' title='replyD' alt='"+list[i].rno+"'></a> ";
 				str += " <a href='#' class='replyMd'><img src='/resources/img/icon_Modify_pen.png'  width='13' height='14' title='replyM'  alt='"+list[i].rno+"'></a> ";
 				str += "    <small class='pull-right text-muted'>" + list[i].replyDate + "</small></div>";
-				str += "    <p style='font-size:80%;'>" + list[i].reply + "</p></div></li>";
+				str += "    <p class='reply' style='font-size:80%;'>" + list[i].reply + "</p></div></li>";
 
 			}
 
@@ -154,19 +154,41 @@ div.content-body {
 			var reply = {
 				replyer : replyer,
 				reply : newReplyaction.find("textarea#reply").val(),
-				bno : bnoValue
+				bno : bnoValue,
+				rno : $("input[name='rno']").val()
 			};
+			
+			
 
+			const button = $(this).text();
+			console.log($("input[name='rno']").val());
+			
+			if(button == "입력"){
 	
 			replyService.add(reply, function(result) {
 				alert(result);
 				newReplyaction.find("textarea#reply").val("");
+				$(".collapse").collapse("hide");
 				
-				$("#addReplyBtn").trigger('click');
 				showList();
 				
 				
 			});
+			
+			//게시물 수정 작업
+			}else{
+				
+				replyService.replyUpdate(reply,function(result){
+					
+					alert(result);
+					newReplyaction.find("textarea#reply").val("");
+					$(".collapse").collapse("hide");
+					showList();
+					
+				});
+				
+				
+			}
 		
 
 		});
@@ -198,29 +220,39 @@ div.content-body {
 		
 
 		
+var chat = $("ul.chat");
 
-		//댓글 삭제 수정
-		$("ul.chat").on("click","img",function(){
-			
-			var title = $(this).attr("title");
-			var rno = $(this).attr("alt");
+		
+		//댓글 삭제
+		$("ul.chat").on("click","a",function(e){
+
+			const rno = $(this).parents("li").data("rno");
+			const reply = $(this).parents("li").data("reply");
+			const title =$(this).find("img").attr("title");
 			console.log(rno);
-			
-			if(title == "replyD"){
+			console.log(title);
+			console.log(reply);
+
+	
+		if(title == "replyD"){
 				replyService.replyDelete(rno,function(result){
 				alert(result);
 					showList();
 				});
 			
-				
-				
+				//수정 화면출력
 			}else if (title == "replyM"){
 				
+				$(".collapse").collapse();
+				newReplyaction.find("textarea#reply").val(reply);
+				$("button.newReplyBtn").text("수정");
+				$("input[name='rno']").val(rno);
 				
 				
-			}
-			
-
+				
+				
+			} 
+			 
 
 		});
 
@@ -321,6 +353,9 @@ div.content-body {
 								<hr>
 
 								<ul class="chat">
+								
+								
+								
 
 
 
@@ -332,6 +367,7 @@ div.content-body {
 
 										<textarea class="form-control" rows="2" id="reply" name="reply"></textarea>
 										<button type="button" class="newReplyBtn">입력</button>
+										<input type="hidden" name="rno" value=""> 
 										<input type="hidden" name="bno" value="${board.bno }"> 
 										<input type="hidden" name="pageNum" value="${page.cri.pageNum }">
 										 <input type="hidden" name="amount" value="${page.cri.amount }">

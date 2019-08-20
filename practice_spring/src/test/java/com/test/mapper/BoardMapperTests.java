@@ -12,6 +12,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.test.domain.BoardVO;
+import com.test.domain.ReplyVO;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -65,5 +66,10 @@ public class BoardMapperTests {
 		
 	}
 	
+	
+		
+		
+		
+		
 
 }

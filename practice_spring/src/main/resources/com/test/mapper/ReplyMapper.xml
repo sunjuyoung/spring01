@@ -34,5 +34,12 @@ insert into tb1_reply (rno,bno,reply,replyer) values (seq_reply.nextval,#{bno},#
 
 </delete>
     
+    
+<update id="modify">
+
+update tb1_reply set reply=#{reply},updateDate=sysdate where rno=#{rno}
+
+</update>    
+    
   
   </mapper>

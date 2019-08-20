@@ -9,7 +9,7 @@ var replyService = (function() {
 	//댓글 입력
 	function add(reply, callback) {
 		
-		console.log("reply......");
+		console.log(" module reply......");
 	
 		
 		$.ajax({
@@ -32,7 +32,7 @@ var replyService = (function() {
 	// 댓글 출력
 	function ajaxList(bno, callback, error) {
 
-		console.log("reply list");
+		console.log("module reply list");
 
 		$.ajax({
 			type : 'get',
@@ -48,7 +48,7 @@ var replyService = (function() {
 	
 	//댓글 제거
 	function replyDelete(rno,callback){
-		console.log("reply delete");
+		console.log("module reply delete");
 		
 		$.ajax({
 			type:'delete',
@@ -62,7 +62,7 @@ var replyService = (function() {
 			
 			
 			
-		})
+		});
 		
 		
 		
@@ -73,7 +73,26 @@ var replyService = (function() {
 	
 	
 	//수정
-	
+	function replyUpdate(reply,callback){
+		console.log("module reply update")
+		
+		$.ajax({
+			type:'put',
+			url:'/reply/'+reply.rno,
+			contentType : "application/json; charset=utf-8",
+			data : JSON.stringify(reply),
+			success:function(result){
+				if(callback){
+					callback(result);
+				}
+			}
+			
+			
+			
+		});
+		
+		
+	}
 	
 	
 	
@@ -82,6 +101,7 @@ var replyService = (function() {
 	return {
 		add : add,
 		ajaxList:ajaxList,
-		replyDelete:replyDelete
+		replyDelete:replyDelete,
+		replyUpdate:replyUpdate
 	};
 })();

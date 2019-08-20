@@ -20,6 +20,7 @@ public class ReplyMapperTests {
 	private ReplyMapper mapper;
 	
 	private Long bno = 33946L;
+	/*
 	
 	@Test
 	public void testInsert() {
@@ -36,6 +37,19 @@ public class ReplyMapperTests {
 	@Test
 	public void testMapper() {
 		log.info(mapper);
+	}
+	*/
+	
+	
+	@Test
+	public void updateTest() {
+		
+		ReplyVO vo = new ReplyVO();
+		
+		vo.setReply("수정 테스트입니다");
+		vo.setRno(141L);
+	
+		mapper.modify(vo);
 	}
 	
 }
