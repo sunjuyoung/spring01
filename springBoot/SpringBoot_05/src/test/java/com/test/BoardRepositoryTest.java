@@ -32,7 +32,7 @@ public class BoardRepositoryTest {
 		Board board = new Board();
 		board.setCnt(0L);
 		board.setTitle("첫 번째 게시글");
-		board.setWriter("테스트");
+	//	board.setWriter("테스트");
 		board.setContent("등록 합니다다다다다");
 		board.setCreateDate(new Date());
 		

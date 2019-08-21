@@ -64,8 +64,8 @@ public interface BoardRepository extends CrudRepository<Board,Long>{
 	
 	//엔티티를 통째로 검색하지 않고 특정 변수만 조회하기 @Query
 	//검색 결과로 엔티티 객체가 조회되는 것이 아니라 여러 변수 값들이 조회된다 따라서 리턴타입을 List<Object[]>로 해야한다
-	@Query("SELECT b.seq,b.title,b.writer FROM Board b WHERE b.title like %?1% ORDER BY b.seq DESC")
-	List<Object[]>queryAnnotationTest3(@Param("searchKeyword") String searchKeyword);
+//	@Query("SELECT b.seq,b.title,b.writer FROM Board b WHERE b.title like %?1% ORDER BY b.seq DESC")
+//	List<Object[]>queryAnnotationTest3(@Param("searchKeyword") String searchKeyword);
 	
 	
 	//@Query로 등록한 SQL은 프로젝트가 로딩되는 시점에 파싱되어 처리된다
@@ -78,8 +78,8 @@ public interface BoardRepository extends CrudRepository<Board,Long>{
 	//@Query 사용하여 특정 데이터베이스에서만 사용되는 네이티브 쿼리 사용 가능
 	//종속되는 문제가있지만 성능상 특정 데이터베이스에 최적화된 쿼리를 사용해야 하는 경우
 	//from절에 엔티티가  아닌 정상적인 테이블 이름이 사용  select  where 절에서도
-	@Query(value="select seq,title,writer from board where title like '%'||?1||'%' order by seq desc",nativeQuery = true)
-	List<Object[]> queryAnnotationTest4(String searchKeyword);
+	//@Query(value="select seq,title,writer from board where title like '%'||?1||'%' order by seq desc",nativeQuery = true)
+//	List<Object[]> queryAnnotationTest4(String searchKeyword);
 	
 	
 	//@Query 페이징 및 정렬

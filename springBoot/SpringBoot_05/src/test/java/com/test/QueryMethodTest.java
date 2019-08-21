@@ -34,44 +34,47 @@ public class QueryMethodTest {
 	 * }
 	 */
 
-	/*
-	 * //like 연산자 사용 검색
-	 * 
-	 * @Test public void testFindByTitle() { //List<Board> boardList =
-	 * boardRepo.findByTitle("22 번째 게시글");
-	 * 
-	 * //실행 결과 where 절에서 like연산자 사용 List<Board> boardList =
-	 * boardRepo.findByContentContaining("2");
-	 * 
-	 * System.out.println("검색 결과");
-	 * 
-	 * for(Board board : boardList) { System.out.println("---->" +
-	 * board.toString()); }
-	 * 
-	 * }
+	
+	  //like 연산자 사용 검색
+	  /*
+	  @Test
+	  public void testFindByTitle() { //List<Board> boardList =
+	  boardRepo.findByTitle("22 번째 게시글");
+	  
+	  //실행 결과 where 절에서 like연산자 사용 List<Board> boardList =
+	  boardRepo.findByContentContaining("2");
+	  
+	  System.out.println("검색 결과");
+	  
+	  for(Board board : boardList) { System.out.println("---->" +
+	  board.toString()); }
+	  
+	  }
 	 */
 
-	/*
-	 * //like or And 검색
-	 * 
-	 * @Test public void testFindByTitleContainingOrContentContaining() {
-	 * 
-	 * List<Board> list = boardRepo.findByTitleContainingOrContentContaining("16",
-	 * "16");
-	 * 
-	 * for(Board board : list) { System.out.println("====>" + board.toString()); }
-	 * 
-	 * 
-	 * Hibernate: select board0_.seq as seq1_0_, board0_.cnt as cnt2_0_,
-	 * board0_.content as content3_0_, board0_.create_date as create_d4_0_,
-	 * board0_.title as title5_0_, board0_.writer as writer6_0_ from board board0_
-	 * where board0_.title like ? escape ? or board0_.content like ? escape ?
-	 * ====>Board(seq=18, title=16 번째 게시글, writer=16테스트, content=16번쨰 테스트 내용,
-	 * createDate=2019-08-11, cnt=0)
-	 * 
-	 * 
-	 * }
-	 */
+	// like or And 검색
+/*
+	@Test
+	public void testFindByTitleContainingOrContentContaining() {
+
+		List<Board> list = boardRepo.findByTitleContainingOrContentContaining("16", "16");
+
+		for (Board board : list) {
+			System.out.println("====>" + board.toString());
+		}
+	
+	  */
+		/*
+		  Hibernate: select board0_.seq as seq1_0_, board0_.cnt as cnt2_0_,
+		  board0_.content as content3_0_, board0_.create_date as create_d4_0_,
+		  board0_.title as title5_0_, board0_.writer as writer6_0_ from board board0_
+		  where board0_.title like ? escape ? or board0_.content like ? escape ?
+		  ====>Board(seq=18, title=16 번째 게시글, writer=16테스트, content=16번쨰 테스트 내용,
+		  createDate=2019-08-11, cnt=0)
+		 
+	  */
+	  
+	//  }
 
 	/*
 	 * 
@@ -85,35 +88,37 @@ public class QueryMethodTest {
 	 * 
 	 */
 
+	
+	  //페이징 정렬
+	  
 	/*
-	 * //페이징 정렬
-	 * 
-	 * @Test public void testOrderbyPaging() {
-	 * 
-	 * //Pageable paging = PageRequest.of(0, 3); //페이지 번호, 검색할 데이터의 개수
-	 * 
-	 * Pageable paging = PageRequest.of(0, 5,Sort.Direction.DESC,"seq"); //페이징 처리할때
-	 * 정렬 //쿼리 메소드에 OrderBy를 결합해도 동일한 결과를 얻을 수 있따.
-	 * 
-	 * // List<Board> boardList = boardRepo.findByTitleContaining("게시글", paging);
-	 * 
-	 * //Page<T> Page<Board> pageInfo = boardRepo.findByTitleContaining("게시글",
-	 * paging);
-	 * 
-	 * System.out.println("Page Size : " + pageInfo.getSize());
-	 * System.out.println("Total pages : " + pageInfo.getTotalPages());
-	 * System.out.println("Total count : " + pageInfo.getTotalElements());
-	 * System.out.println("Next : " + pageInfo.nextPageable());
-	 * 
-	 * List<Board> boardList = pageInfo.getContent();
-	 * 
-	 * for(Board board : boardList) { System.out.println("====>" +
-	 * board.toString()); }
-	 * 
-	 * 
-	 * }
-	 * 
-	 */
+	@Test 
+	public void testOrderbyPaging() {
+	  
+	  //Pageable paging = PageRequest.of(0, 3); //페이지 번호, 검색할 데이터의 개수
+	  
+	  Pageable paging = PageRequest.of(0, 5,Sort.Direction.DESC,"seq"); //페이징 처리할때
+	  정렬 //쿼리 메소드에 OrderBy를 결합해도 동일한 결과를 얻을 수 있따.
+	  
+	  // List<Board> boardList = boardRepo.findByTitleContaining("게시글", paging);
+	  
+	  //Page<T> Page<Board> pageInfo = boardRepo.findByTitleContaining("게시글",
+	  paging);
+	  
+	  System.out.println("Page Size : " + pageInfo.getSize());
+	  System.out.println("Total pages : " + pageInfo.getTotalPages());
+	  System.out.println("Total count : " + pageInfo.getTotalElements());
+	  System.out.println("Next : " + pageInfo.nextPageable());
+	  
+	  List<Board> boardList = pageInfo.getContent();
+	  
+	  for(Board board : boardList) { System.out.println("====>" +
+	  board.toString()); }
+	  
+	  
+	  }
+	  */
+	 
 
 	/*
 	 * //위치기반 파라미터
@@ -149,8 +154,9 @@ public class QueryMethodTest {
 	}
 
 	
+	  // 네이티브 쿼리
+	  
 	/*
-	// 네이티브 쿼리
 	@Test
 	public void testQueryAnnotationtest4() {
 		List<Object[]> boardList = boardRepo.queryAnnotationTest4("2");
@@ -162,22 +168,19 @@ public class QueryMethodTest {
 		}
 
 	}
-	
-	*/
-	
+	  
+	 */
+
 	@Test
 	public void testQueryAnnotationTest5() {
-		Pageable paging = PageRequest.of(0, 3, Sort.Direction.DESC,"seq");
-		
+		Pageable paging = PageRequest.of(0, 3, Sort.Direction.DESC, "seq");
+
 		List<Board> boardList = boardRepo.queryAnnotationTest5(paging);
-		
-		for(Board board : boardList) {
+
+		for (Board board : boardList) {
 			System.out.println("----->" + board.toString());
 		}
-		
+
 	}
-	
-	
-	
 
 }
