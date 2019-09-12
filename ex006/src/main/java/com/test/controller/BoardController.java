@@ -21,6 +21,14 @@ public class BoardController {
 	@Autowired
 	private BoardService service;
 	
+	
+	//메인
+	@GetMapping("/main")
+	public void main() {
+		
+	}
+	
+	
 	//리스트
 	@GetMapping("/list")
 	public void boardList(Model model) {
@@ -32,6 +40,15 @@ public class BoardController {
 		
 	}
 	
+	
+	
+	//
+	@GetMapping("/register")
+	public void register() {
+		
+	}
+	
+	
 	//등록
 	@PostMapping("/register")
 	public String register(BoardVO vo,RedirectAttributes rttr) {
@@ -40,14 +57,14 @@ public class BoardController {
 		
 		int result = service.insert(vo);
 		
-		rttr.addAttribute("result", result);
+		rttr.addFlashAttribute("result", result);//flashAttribute 일회성으로 데이터를 전달한다
 		
 		return "redirect:/board/list";
 	}
 	
 	
 	//조회
-	@GetMapping("/get")
+	@GetMapping({"/get","/modify"})
 	public void get(Long bno,Model model) {//@RequsetParam 을 이용해서 명시적으로 처리할수있다
 		
 		log.info("get controller");
@@ -75,7 +92,7 @@ public class BoardController {
 	@PostMapping("/remove")
 	public String remove(Long bno,RedirectAttributes rttr) {
 		
-		service.read(bno);
+		service.remove(bno);
 		
 		return "redirect:/board/list";
 	}
