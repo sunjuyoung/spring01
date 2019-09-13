@@ -23,6 +23,10 @@ updatedate date default sysdate
 
 );
 
+
+
+
+
 select /*+ INDEX_DESC (tb1_board pk_board)*/ * from (
 select   /*+ INDEX_DESC (tb1_board pk_board)*/ bno,title,content,writer,regdate,updateDate,replyCnt,rownum rn 
 from tb1_board where (title like '%채원%' or content like '%채원%') and rownum < 10) 

@@ -24,4 +24,6 @@ public class BoardVO {
 	private int replyCnt;
 	
 	
+	
+	
 }

@@ -111,10 +111,10 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">메시지</h4>
+         
         </div>
         <div class="modal-body">
-          <p>새글 등록 완료</p>
+          
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -152,14 +152,17 @@
 		function checkModal(result){
 			
 			//history객체를 이용하여 모달창 표시하지 않음
-			if(parseInt(result) < 0 || history.state){
+			if(result === '' || history.state){
 				return;
 			}
 			
-			//반환값이 1이상일경우 success모달창 띄운다
-			if(parseInt(result) >0){
-				$("#myModal").modal("show");
+			//수정,삭제,등록 완료시  success모달창 띄운다
+			if(result != ''){
+				$("div.modal-body").html( result + " 완료");
+				
+				
 			}
+			$("#myModal").modal("show");
 			
 		}
 		

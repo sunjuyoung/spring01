@@ -48,7 +48,8 @@
 								<h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
 							</div>
 							<form class="user" method="POST"
-								action="${pageContext.request.contextPath}/board/register">
+								action="${pageContext.request.contextPath}/board/modify">
+								
 								<div class="form-group">
 									<input type="text" class="form-control form-control-user"
 										id="title" name="title"
@@ -77,8 +78,7 @@
 									수정</button>
 
 								<button data-oper="list"
-									class="btn btn-primary btn-user btn-block"
-									onclick="location.href='${pageContext.request.contextPath}/board/list'">
+									class="btn btn-primary btn-user btn-block">
 									목록</button>
 
 								<hr>
@@ -99,6 +99,34 @@
 	</div>
 
 	<!-- Bootstrap core JavaScript-->
+	
+	<script type="text/javascript">
+	$(document).ready(function(){
+		
+		var form = $("form");
+		
+		$("button").on("click",function(){
+			
+			var oper = $(this).data("oper");
+			
+			if(oper === "list"){
+				self.location = "${pageContext.request.contextPath}/board/list";
+				return;
+			}
+			
+			form.submit();
+			
+		});
+		
+		
+		
+	});
+	
+	
+	</script>
+	
+	
+	
 
 	<script
 		src="${pageContext.request.contextPath}/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

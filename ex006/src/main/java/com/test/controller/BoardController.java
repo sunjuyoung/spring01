@@ -57,7 +57,11 @@ public class BoardController {
 		
 		int result = service.insert(vo);
 		
-		rttr.addFlashAttribute("result", result);//flashAttribute 일회성으로 데이터를 전달한다
+		if(result > 0) {
+			rttr.addFlashAttribute("result","등록");
+		}
+		
+		//flashAttribute 일회성으로 데이터를 전달한다
 		
 		return "redirect:/board/list";
 	}
@@ -67,7 +71,7 @@ public class BoardController {
 	@GetMapping({"/get","/modify"})
 	public void get(Long bno,Model model) {//@RequsetParam 을 이용해서 명시적으로 처리할수있다
 		
-		log.info("get controller");
+		log.info("get , modify controller");
 		
 		BoardVO board = service.read(bno);
 		
@@ -81,7 +85,7 @@ public class BoardController {
 		
 		
 		if(service.update(vo) == 1) {
-			rttr.addAttribute("result","success");
+			rttr.addAttribute("result","수정");
 		}
 		
 		return "redirect:/board/list";
@@ -92,7 +96,11 @@ public class BoardController {
 	@PostMapping("/remove")
 	public String remove(Long bno,RedirectAttributes rttr) {
 		
-		service.remove(bno);
+		int result= service.remove(bno);
+		
+		if(result > 0) {
+			rttr.addFlashAttribute("result","삭제");
+		}
 		
 		return "redirect:/board/list";
 	}
