@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.test.domain.BoardVO;
+import com.test.domain.Criteria;
 import com.test.mapper.BoardMapper;
 
 import lombok.extern.log4j.Log4j;
@@ -28,6 +29,16 @@ public class BoardServiceImpl implements BoardService {
 		
 		return mapper.boardList();
 	}
+	
+	
+	//페이징리스트
+	@Override
+	public List<BoardVO> pagingList(Criteria cri) {
+		
+		return mapper.pagingList(cri);
+	}
+	
+	
 
 	//삭제
 	@Override
@@ -56,6 +67,14 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public int update(BoardVO vo) {
 		return mapper.update(vo);
+	}
+
+
+	//total
+	@Override
+	public int total() {
+		// TODO Auto-generated method stub
+		return mapper.total();
 	}
 
 	

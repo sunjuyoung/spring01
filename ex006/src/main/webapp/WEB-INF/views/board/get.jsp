@@ -47,7 +47,7 @@
 							<div class="p-5">
 								<div class="text-center">
 								
-									<h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+									<h1 class="h4 text-gray-900 mb-4">내용</h1>
 								</div>
 
 								<div class="form-group">
@@ -95,7 +95,8 @@
 									<!-- 직접 버튼 링크를 처리하는 대신 나중에 다양한 상황을 처리하기 위해서 -->									
 									<form id="openForm" method="get"action="${pageContext.request.contextPath}/board/list">
 									<input type="hidden" id="bno" name="bno" value='<c:out value="${board.bno }" />' >
-									
+									<input type="hidden" id=pageNum name="pageNum" value='<c:out value="${cri.pageNum }" />'>
+									<input type="hidden" id=amount name="amount" value="${cri.amount }">
 									
 									</form>
 

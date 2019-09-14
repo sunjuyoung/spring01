@@ -46,6 +46,21 @@ public class BoardControllerTest {
 	
 	*/
 	
+	//페이징 리스트
+	@Test
+	public void pagingList() throws Exception {
+		log.info(
+				mockMvc.perform(MockMvcRequestBuilders.get("/board/list").param("pageNum", "1").param("amount","10"))
+				.andReturn().getModelAndView().getModelMap()
+				
+				
+				);
+		
+		
+	}
+	
+	/*
+	
 	//등록
 	@Test
 	public void testregister() throws Exception {
@@ -62,5 +77,5 @@ public class BoardControllerTest {
 		
 	}
 	
-	
+	*/
 }

@@ -36,8 +36,8 @@
 									<tbody>
 										<c:forEach var="board" items="${list}">
 											<tr>
-												<td><c:out value="${board.bno}" /></td>
-												<td><a href="${pageContext.request.contextPath }/board/get?bno=${board.bno }"><c:out value="${board.title }" /> </a></td>
+												<td><a class="move" href='<c:out value="${board.bno }" />'><c:out value="${board.bno}" /></a></td>
+												<td><a class="move" href='<c:out value="${board.bno }" />'><c:out value="${board.title }" /> </a></td>
 												<td><c:out value="${board.writer }" /></td>
 												<td><fmt:formatDate pattern="yyyy-MM-dd" value="${board.updateDate }" /></td>
 										
@@ -49,7 +49,43 @@
 								</table>
 							</div>
 						</div>
+						
+						                 <!--      페이징     -->
+						                 
+					<div class="pull-right">
+					
+					<ul class='pagination'>
+						<c:if test="${page.prev }"> 
+						<li class="paginate_button previous"><a href='${page.startPage -1 }'> prev</a></li>
+						</c:if>
+						
+						<c:forEach var="num" begin="${page.startPage }" end="${page.endPage }">
+						
+						<li class="paginate_button ${page.cri.pageNum == num? 'active':'' }"><a href="${num }"> ${num }</a></li>
+						
+						</c:forEach>
+						
+						
+						<c:if test="${page.next }">
+						<li class="paginate_button next"><a href="${page.endPage +1 }"> next</a></li>
+						</c:if>
+					</ul>
+					
+					
+					
+					
+					</div>	
+						<form id="actionForm" action ="${pageContext.request.contextPath}/board/list" method="get">
+						<input type="hidden" id=pageNum name="pageNum" value="${page.cri.pageNum }">
+						<input type="hidden" id=amount name="amount" value="${page.cri.amount }">
+						</form>
+						
+						
+						
 					</div>
+
+
+
 
 				</div>
 				<!-- /.container-fluid -->
@@ -78,7 +114,7 @@
 		class="fas fa-angle-up"></i>
 	</a>
 
-	<!-- Logout Modal-->
+	<!--    Modal       -->
 	<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
 		aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
@@ -103,7 +139,7 @@
 	
 	
 	
-	<!-- Modal -->
+	<!-- result Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
     
@@ -175,6 +211,32 @@
 		});
 		
 		
+		
+		//페이징 버튼
+		var form = $("#actionForm");
+		
+		$(".paginate_button a").on("click",function(e){
+			
+			e.preventDefault();
+			
+			form.find("input[name='pageNum']").val($(this).attr("href"));
+			form.submit();
+			
+			
+		});
+		
+		//글 클릭 조회페이지 이동
+		$("a.move").on("click",function(e){
+			
+			e.preventDefault();
+			
+			form.append("<input type='hidden' name='bno' id='bno' value='"+$(this).attr("href")+"'>");
+			//조회 후 목록페이지로 돌아왔을시 페이지번호를 유지하기위해 페이징 정보를 넘긴다
+			form.attr("action","${pageContext.request.contextPath}/board/get");
+			form.submit();
+			
+			
+		});
 		
 		
 		

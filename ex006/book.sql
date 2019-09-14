@@ -179,3 +179,14 @@ insert into tb1_board (bno,title,content,writer,userid) values ((select max(bno)
 
 
 
+--rownum 처음으로 나오는 값이 1이다
+select /*+ INDEX_DESC (tb1_board pk_board)*/  bno, title,content,regDate,updateDate,writer 
+   from(select /*+ INDEX_DESC (tb1_board pk_board)*/ rownum rn, bno, title,content,regDate,updateDate,writer 
+        from tb1_board where rownum <= 10) where rn >0;
+
+
+select count(*) from tb1_board;
+
+
+
+

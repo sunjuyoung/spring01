@@ -13,6 +13,20 @@ select bno,writer,content,title,regDate,updateDate from tb1_board
 </select>
 
 
+<!-- 페이징 리스트 -->
+<select id="pagingList" resultType = "com.test.domain.BoardVO">
+
+<![CDATA[
+
+select /*+ INDEX_DESC (tb1_board pk_board)*/  bno, title,content,regDate,updateDate,writer 
+   from(select /*+ INDEX_DESC (tb1_board pk_board)*/ rownum rn, bno, title,content,regDate,updateDate,writer 
+        from tb1_board where rownum <= #{pageNum}*#{amount} ) where rn >(#{pageNum} -1) * #{amount}
+
+]]>
+</select>
+
+
+
 <!-- 조회 -->
 <select id="read" resultType="com.test.domain.BoardVO">
 
@@ -45,6 +59,11 @@ update tb1_board set title=#{title},content=#{content},updateDate=sysdate where 
 
 </update>
 
+<select id="total" resultType="int">
+
+select count(*) from tb1_board
+
+</select>
 
 
 

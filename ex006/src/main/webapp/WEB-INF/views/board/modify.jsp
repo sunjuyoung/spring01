@@ -73,6 +73,8 @@
 								</div>
 								
 								<input type="hidden" id="bno" name="bno" value='<c:out value="${board.bno }" />' >
+								<input type="hidden" id=pageNum name="pageNum" value="${cri.pageNum }">
+								<input type="hidden" id=amount name="amount" value="${cri.amount }">
 
 								<button type="submit" class="btn btn-primary btn-user btn-block">
 									수정</button>
@@ -110,8 +112,11 @@
 			var oper = $(this).data("oper");
 			
 			if(oper === "list"){
-				self.location = "${pageContext.request.contextPath}/board/list";
-				return;
+		
+				form.find("#bno").remove();
+				form.attr("action","${pageContext.request.contextPath}/board/list");
+				form.attr("method","get");
+				
 			}
 			
 			form.submit();
